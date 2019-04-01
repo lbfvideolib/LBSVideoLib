@@ -1,0 +1,65 @@
+Date: 9/2/2018 7:46:26 PM
+Title: An errror occured in LBF Video Lib
+Exception: System.IO.DirectoryNotFoundException: Could not find a part of the path 'C:\LBFARBooksSetup\Videos\Class 1\Class 1 - All In One Part 1\Class 1 - All In One Part 1 - EVS\Class 1 - All In One Part 1 - EVS - Environmental Studies Course Book\Thumbnail\ThumbnailImage.jpg'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite)
+   at System.IO.File.Copy(String sourceFileName, String destFileName)
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateClientSchoolPackage() in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 369
+   at LBFVideoLib.Admin.frmSchoolRegistration.btnRegister_Click(Object sender, EventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 71
+Stack Trace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite)
+   at System.IO.File.Copy(String sourceFileName, String destFileName)
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateClientSchoolPackage() in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 369
+   at LBFVideoLib.Admin.frmSchoolRegistration.btnRegister_Click(Object sender, EventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 71
+Method Name: btnRegister_Click
+Line No.: 71
+===============================================================================================================================
+
+Date: 9/2/2018 7:48:09 PM
+Title: An internal error has occurred and has been logged. Please contact your system administrator for help.
+Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateRegisteredSchoolInfoFile(String registeredSchoolInfo, String schoolCode, String schoolCity, String schoolName, String memoNumber) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 421
+Stack Trace:    at LBFVideoLib.Admin.frmSchoolRegistration.CreateRegisteredSchoolInfoFile(String registeredSchoolInfo, String schoolCode, String schoolCity, String schoolName, String memoNumber) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 421
+Method Name: CreateRegisteredSchoolInfoFile
+Line No.: 421
+===============================================================================================================================
+
+Date: 9/2/2018 7:48:11 PM
+Title: An errror occured in LBF Video Lib
+Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LBFVideoLib.Common.ExceptionHandler.HandleException(Exception ex, String message, Boolean ignoreException) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Common\Exception\ExceptionHandler.cs:line 22
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateRegisteredSchoolInfoFile(String registeredSchoolInfo, String schoolCode, String schoolCity, String schoolName, String memoNumber) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 440
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateClientSchoolPackage() in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 369
+   at LBFVideoLib.Admin.frmSchoolRegistration.btnRegister_Click(Object sender, EventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 71
+Stack Trace:    at LBFVideoLib.Common.ExceptionHandler.HandleException(Exception ex, String message, Boolean ignoreException) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Common\Exception\ExceptionHandler.cs:line 22
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateRegisteredSchoolInfoFile(String registeredSchoolInfo, String schoolCode, String schoolCity, String schoolName, String memoNumber) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 440
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateClientSchoolPackage() in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 369
+   at LBFVideoLib.Admin.frmSchoolRegistration.btnRegister_Click(Object sender, EventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 71
+Method Name: btnRegister_Click
+Line No.: 71
+===============================================================================================================================
+
+Date: 9/2/2018 7:49:28 PM
+Title: An internal error has occurred and has been logged. Please contact your system administrator for help.
+Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateRegisteredSchoolInfoFile(String registeredSchoolInfo, String schoolCode, String schoolCity, String schoolName, String memoNumber) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 421
+Stack Trace:    at LBFVideoLib.Admin.frmSchoolRegistration.CreateRegisteredSchoolInfoFile(String registeredSchoolInfo, String schoolCode, String schoolCity, String schoolName, String memoNumber) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 421
+Method Name: CreateRegisteredSchoolInfoFile
+Line No.: 421
+===============================================================================================================================
+
+Date: 9/2/2018 7:49:33 PM
+Title: An errror occured in LBF Video Lib
+Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at LBFVideoLib.Common.ExceptionHandler.HandleException(Exception ex, String message, Boolean ignoreException) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Common\Exception\ExceptionHandler.cs:line 22
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateRegisteredSchoolInfoFile(String registeredSchoolInfo, String schoolCode, String schoolCity, String schoolName, String memoNumber) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 440
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateClientSchoolPackage() in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 369
+   at LBFVideoLib.Admin.frmSchoolRegistration.btnRegister_Click(Object sender, EventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 71
+Stack Trace:    at LBFVideoLib.Common.ExceptionHandler.HandleException(Exception ex, String message, Boolean ignoreException) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Common\Exception\ExceptionHandler.cs:line 22
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateRegisteredSchoolInfoFile(String registeredSchoolInfo, String schoolCode, String schoolCity, String schoolName, String memoNumber) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 440
+   at LBFVideoLib.Admin.frmSchoolRegistration.CreateClientSchoolPackage() in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 369
+   at LBFVideoLib.Admin.frmSchoolRegistration.btnRegister_Click(Object sender, EventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 71
+Method Name: btnRegister_Click
+Line No.: 71
+===============================================================================================================================
+

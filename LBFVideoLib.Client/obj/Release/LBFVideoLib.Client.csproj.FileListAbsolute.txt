@@ -1,0 +1,38 @@
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\LBFVideoLib.Client.exe.config
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\Interop.WMPLib.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\AxInterop.WMPLib.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.csproj.ResolveComReference.cache
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\class 1_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\class 2_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\class 3_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\class 4_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\class 5_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\class 1_hindi.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\class 2_hindi.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\class 3_hindi.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\class 4_hindi.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\class 5_hindi.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\default.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\subjects_english.png
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\subjects_evs.png
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\subjects_hindi.png
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Thumbnails\subjects_maths.png
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\LBFVideoLib.Client.exe
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\LBFVideoLib.Client.pdb
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\LBFVideoLib.Common.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Newtonsoft.Json.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\LBFVideoLib.Common.pdb
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Newtonsoft.Json.xml
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\Interop.WMPLib.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Release\AxInterop.WMPLib.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.csprojResolveAssemblyReference.cache
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.frmDashboard.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.frmLogin.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.frmPrivacyPolicy.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBSVideoLib.frmPlayVideo.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.frmUpCommingVideo.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.frmVideoLibrary.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.Properties.Resources.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.csproj.GenerateResource.Cache
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.exe
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Release\LBFVideoLib.Client.pdb

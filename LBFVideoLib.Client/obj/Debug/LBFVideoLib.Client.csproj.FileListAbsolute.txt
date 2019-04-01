@@ -1,0 +1,90 @@
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Client.exe.config
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Client.exe
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Client.pdb
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Common.dll
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\bin\Debug\Newtonsoft.Json.dll
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Common.pdb
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\bin\Debug\Newtonsoft.Json.xml
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\bin\Debug\Interop.WMPLib.dll
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\bin\Debug\AxInterop.WMPLib.dll
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csprojResolveAssemblyReference.cache
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\Interop.WMPLib.dll
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\AxInterop.WMPLib.dll
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.ResolveComReference.cache
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmDashboard.resources
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmLogin.resources
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBSVideoLib.frmPlayVideo.resources
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmUpCommingVideo.resources
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmVideoLibrary.resources
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.Properties.Resources.resources
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.GenerateResource.cache
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.CoreCompileInputs.cache
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.CopyComplete
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.exe
+D:\TestProject\C#\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.pdb
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\Thumbnails\Subjects_ENGLISH.png
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\Thumbnails\Subjects_EVS.png
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\Thumbnails\Subjects_HINDI.png
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\Thumbnails\Subjects_MATHS.png
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Client.exe.config
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Client.exe
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Client.pdb
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Common.dll
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\Newtonsoft.Json.dll
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Common.pdb
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\Newtonsoft.Json.xml
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\Interop.WMPLib.dll
+D:\School\dotnet\LBSVideoLib.Client\bin\Debug\AxInterop.WMPLib.dll
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csprojAssemblyReference.cache
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\Interop.WMPLib.dll
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\AxInterop.WMPLib.dll
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.ResolveComReference.cache
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmDashboard.resources
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmLogin.resources
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBSVideoLib.frmPlayVideo.resources
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmUpCommingVideo.resources
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmVideoLibrary.resources
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.Properties.Resources.resources
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.GenerateResource.cache
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.CoreCompileInputs.cache
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.CopyComplete
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.exe
+D:\School\dotnet\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.pdb
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\class 1_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\class 2_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\class 3_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\class 4_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\class 5_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\class 1_hindi.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\class 2_hindi.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\class 3_hindi.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\class 4_hindi.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\class 5_hindi.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\default.jpg
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\subjects_english.png
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\subjects_evs.png
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\subjects_hindi.png
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Unsed\Thumbnails\subjects_maths.png
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Client.exe.config
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Client.exe
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Client.pdb
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Common.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Newtonsoft.Json.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\LBFVideoLib.Common.pdb
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Newtonsoft.Json.xml
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\Interop.WMPLib.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\bin\Debug\AxInterop.WMPLib.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csprojResolveAssemblyReference.cache
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\Interop.WMPLib.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\AxInterop.WMPLib.dll
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.ResolveComReference.cache
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmDashboard.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmLogin.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmPrivacyPolicy.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBSVideoLib.frmPlayVideo.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmUpCommingVideo.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.frmVideoLibrary.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.Properties.Resources.resources
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.GenerateResource.Cache
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.exe
+D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\obj\Debug\LBFVideoLib.Client.pdb

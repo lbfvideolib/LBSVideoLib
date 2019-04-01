@@ -1,0 +1,21 @@
+Date: 9/4/2018 12:12:59 AM
+Title: Index was outside the bounds of the array.
+Exception: System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at LBFVideoLib.Common.Cryptograph.DecryptFile(String inputFile, String outputFile) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Common\Cryptograph.cs:line 158
+   at LBFVideoLib.Client.frmUpCommingVideo.backgroundWorker1_DoWork(Object sender, DoWorkEventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\frmUpCommingVideo.cs:line 570
+Stack Trace:    at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at LBFVideoLib.Common.Cryptograph.DecryptFile(String inputFile, String outputFile) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Common\Cryptograph.cs:line 158
+   at LBFVideoLib.Client.frmUpCommingVideo.backgroundWorker1_DoWork(Object sender, DoWorkEventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Client\frmUpCommingVideo.cs:line 570
+Method Name: backgroundWorker1_DoWork
+Line No.: 570
+===============================================================================================================================
+

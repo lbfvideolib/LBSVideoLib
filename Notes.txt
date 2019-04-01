@@ -1,0 +1,235 @@
+Credential Information
+=================================
+Git Login
+Uid: videolib
+Pwd: Password@123
+
+email account: developmentworkonly
+pwd: Password@123
+
+Firebase Account: 
+Uid: ar@lbf.in
+Pwd: lbf@1234
+
+Video Control Issue
+=================================
+https://stackoverflow.com/questions/13929021/could-not-load-file-or-assembly-axinterop-wmplib-or-one-of-its-dependencies-t
+https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772567(v=ws.11)
+
+Changes: 15-July-2018
+=================================
+Server:
+
+(1) Session - DropDown 
+2018-19
+2019-20
+2020-21
+30th April 
+Status: Done
+
+(2) LBF spelling on header
+Status: Done
+
+(3) Row highlighter color can we change in List view
+Status: Not possilbe
+
+(4) Book list is showing empty even select all parent items
+Status: Done
+
+(5) When click on register then it is showing error 
+
+See the end of this message for details on invoking 
+just-in-time (JIT) debugging instead of this dialog box.
+
+************** Exception Text **************
+System.IO.IOException: The file 'D:\School\ClientPackages\Newtonsoft.Json.xml' already exists.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalCopy(String sourceFileName, String destFileName, Boolean overwrite)
+   at LBSVideoLib.Admin.frmSchoolRegistration.btnRegister_Click(Object sender, EventArgs e) in D:\School\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 73
+   at System.Windows.Forms.Control.OnClick(EventArgs e)
+   at System.Windows.Forms.Button.OnMouseUp(MouseEventArgs mevent)
+   at System.Windows.Forms.Control.WmMouseUp(Message& m, MouseButtons button, Int32 clicks)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.ButtonBase.WndProc(Message& m)
+   at System.Windows.Forms.Button.WndProc(Message& m)
+   at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+************** Loaded Assemblies **************
+mscorlib
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.8933 (WinRelRS4.050727-8900)
+    CodeBase: file:///C:/Windows/Microsoft.NET/Framework64/v2.0.50727/mscorlib.dll
+----------------------------------------
+LBSVideoLib.Admin
+    Assembly Version: 1.0.0.0
+    Win32 Version: 1.0.0.0
+    CodeBase: file:///C:/School/Admin/LBSVideoLib.Admin.exe
+----------------------------------------
+System.Windows.Forms
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.8922 (WinRelRS4.050727-8900)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+----------------------------------------
+System
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.8922 (WinRelRS4.050727-8900)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System/2.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+System.Drawing
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.8922 (WinRelRS4.050727-8900)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Drawing/2.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+----------------------------------------
+LBSVideoLib.Common
+    Assembly Version: 1.0.0.0
+    Win32 Version: 1.0.0.0
+    CodeBase: file:///C:/School/Admin/LBSVideoLib.Common.DLL
+----------------------------------------
+System.Configuration
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.8922 (WinRelRS4.050727-8900)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Configuration/2.0.0.0__b03f5f7f11d50a3a/System.Configuration.dll
+----------------------------------------
+System.Xml
+    Assembly Version: 2.0.0.0
+    Win32 Version: 2.0.50727.8922 (WinRelRS4.050727-8900)
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Xml/2.0.0.0__b77a5c561934e089/System.Xml.dll
+----------------------------------------
+System.Core
+    Assembly Version: 3.5.0.0
+    Win32 Version: 3.5.30729.8931 built by: WinRelRS4
+    CodeBase: file:///C:/WINDOWS/assembly/GAC_MSIL/System.Core/3.5.0.0__b77a5c561934e089/System.Core.dll
+----------------------------------------
+
+************** JIT Debugging **************
+To enable just-in-time (JIT) debugging, the .config file for this
+application or computer (machine.config) must have the
+jitDebugging value set in the system.windows.forms section.
+The application must also be compiled with debugging
+enabled.
+
+For example:
+
+<configuration>
+    <system.windows.forms jitDebugging="true" />
+</configuration>
+
+When JIT debugging is enabled, any unhandled exception
+will be sent to the JIT debugger registered on the computer
+rather than be handled by this dialog box.
+Status: Done
+
+
+
+(4) View folder name shoud be "SchoolCode_City_LBFVideos"
+Status: Done
+
+(5) Create short cut of exe file LBFVideos
+Status: Pending
+
+(6) Movve all exe and dll in Package folder
+Status: Done
+
+(7) Add registration detail in firebase
+LBFProject
+  - 1231
+    - SchoolName
+    - City
+    - EmailID
+    - Password
+    - Expiry Date
+    - RgistrationDate (Current DateTime)
+    - Class 
+       - Subject
+           - Series
+               - Book
+
+
+  - 1345
+Status: Done
+
+Client:
+Login
+(1) Pencil should be aboe the bottome bar 
+Status: Done
+(2) Spelling Mistake LBS-LBF in header and header text should be allign
+Status: Done
+(3) EmailId and Password textbox text should be allign and user can see password on click eye icon
+Status: Done
+(4) Show popup on contact button click with close icon
+Status: Done
+(5) When subscription is expired then show subscription expire message with close icon
+Status: Done
+
+Dashboard/Video Lib
+ (1) Logo is streach show proper image 
+ Status: Done
+ (2) Tree hirechy will start from : Class, Series, Subject, Book  
+ Status: Done
+ (1) Spelling mistake LBS-LBF and allignment
+ Status: Done
+ (3) Thumbnail Icon and filename should be below bottome of image
+ Status: Done
+ (4) Recommendations and most watched videos click should redirect on video view 
+ Status: Done
+ (5) Logo click should redirect to home 
+ Status: Done
+ Other menu tree should collapse, only current folder should expand
+ Status: Pending
+
+Video
+Video height increase Till Verbal
+Status: Done
+
+Show only file name not the nomenclature 
+Status: Done
+
+Upcoming Videos Font size would be smaller 
+Status: Done
+
+Video Portal UI and Icons : https://drive.google.com/open?id=1ZDCm4Kl728VjkF3XWDTrOp41_X-Ncrkf
+Wathc count should be on video click
+Status: Pending
+
+When click on tree, it will redirect to Video Lib
+Status: Done
+
+Other
+Offline data should sync 
+Status: Pending
+
+Analytics
+  - Video Click
+  - Session Time
+  - Application run first time (System count)	
+
+Expiration: Before Login - Show popup, After Login -Show popup and redirect to login screen
+
+Vieo Incription: Can we change file name 
+
+Google Drive Link:
+https://drive.google.com/drive/folders/1YhB-mLleoXcQ5Unyr-RnK7qSBB0SP2lI
+
+Estimte: ?
+Updated Build: 
+
+Tasks:
+(a) Search - 
+(b) Google Analytics
+(c) Offline Data
+(e) License expiretion
+(f) MDI Form
+(g) Nodel selection and collapse and expand tree
+(h) Thumbnail 
+(i) Watch Count, Recomondation, Most visited
+(j) Pasword eye control
+(k) Exe shortcut and folder hirechy
+(l) Folder sorting order
+
+
+Note: Recomndation video logic ?
+      Most watches ?
+      Seach will be global or selected folder ?
+

@@ -1,0 +1,39 @@
+Date: 8/8/2018 11:00:30 PM
+Title: An internal error has occurred and has been logged. Please contact your system administrator for help.
+Exception: System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\School\Video Folders Structure'.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.Directory.InternalGetFileDirectoryNames(String path, String userPathOriginal, String searchPattern, Boolean includeFiles, Boolean includeDirs, SearchOption searchOption)
+   at System.IO.Directory.GetDirectories(String path, String searchPattern, SearchOption searchOption)
+   at System.IO.Directory.GetDirectories(String path)
+   at LBFVideoLib.Admin.frmSchoolRegistration.InitializeRegistrationForm() in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 741
+Stack Trace:    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.Directory.InternalGetFileDirectoryNames(String path, String userPathOriginal, String searchPattern, Boolean includeFiles, Boolean includeDirs, SearchOption searchOption)
+   at System.IO.Directory.GetDirectories(String path, String searchPattern, SearchOption searchOption)
+   at System.IO.Directory.GetDirectories(String path)
+   at LBFVideoLib.Admin.frmSchoolRegistration.InitializeRegistrationForm() in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 741
+Method Name: InitializeRegistrationForm
+Line No.: 741
+===============================================================================================================================
+
+Date: 8/8/2018 11:00:30 PM
+Title: An errror occured in LBF Video Lib
+Exception: System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\School\Video Folders Structure'.
+   at LBFVideoLib.Common.ExceptionHandler.HandleException(Exception ex, String message, Boolean ignoreException) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Common\Exception\ExceptionHandler.cs:line 22
+   at LBFVideoLib.Admin.frmSchoolRegistration.InitializeRegistrationForm() in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 763
+   at LBFVideoLib.Admin.frmSchoolRegistration.frmSchoolRegistration_Load(Object sender, EventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 53
+Stack Trace:    at LBFVideoLib.Common.ExceptionHandler.HandleException(Exception ex, String message, Boolean ignoreException) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Common\Exception\ExceptionHandler.cs:line 22
+   at LBFVideoLib.Admin.frmSchoolRegistration.InitializeRegistrationForm() in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 763
+   at LBFVideoLib.Admin.frmSchoolRegistration.frmSchoolRegistration_Load(Object sender, EventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 53
+Method Name: frmSchoolRegistration_Load
+Line No.: 53
+===============================================================================================================================
+
+Date: 8/8/2018 11:02:23 PM
+Title: An errror occured in LBF Video Lib
+Exception: System.Exception: Test me out
+   at LBFVideoLib.Admin.frmSchoolRegistration.frmSchoolRegistration_Load(Object sender, EventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 48
+Stack Trace:    at LBFVideoLib.Admin.frmSchoolRegistration.frmSchoolRegistration_Load(Object sender, EventArgs e) in D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\frmSchoolRegistration.cs:line 48
+Method Name: frmSchoolRegistration_Load
+Line No.: 48
+===============================================================================================================================
+

@@ -1,0 +1,8 @@
+D:\School\LBSVideoLib\LBSVideoLib.Common\bin\Release\LBFVideoLib.Common.dll
+D:\School\LBSVideoLib\LBSVideoLib.Common\bin\Release\LBFVideoLib.Common.pdb
+D:\School\LBSVideoLib\LBSVideoLib.Common\bin\Release\Newtonsoft.Json.dll
+D:\School\LBSVideoLib\LBSVideoLib.Common\bin\Release\Newtonsoft.Json.xml
+D:\School\LBSVideoLib\LBSVideoLib.Common\obj\Release\LBFVideoLib.Common.csproj.CoreCompileInputs.cache
+D:\School\LBSVideoLib\LBSVideoLib.Common\obj\Release\LBFVideoLib.Common.csproj.CopyComplete
+D:\School\LBSVideoLib\LBSVideoLib.Common\obj\Release\LBFVideoLib.Common.dll
+D:\School\LBSVideoLib\LBSVideoLib.Common\obj\Release\LBFVideoLib.Common.pdb
