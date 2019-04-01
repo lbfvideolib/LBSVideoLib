@@ -22,6 +22,7 @@ D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\LBFVi
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Newtonsoft.Json.xml
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Interop.WMPLib.dll
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\AxInterop.WMPLib.dll
+D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.csprojResolveAssemblyReference.cache
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\Interop.WMPLib.dll
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\AxInterop.WMPLib.dll
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.csproj.ResolveComReference.cache
@@ -35,4 +36,3 @@ D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFVi
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.csproj.GenerateResource.Cache
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.exe
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.pdb
-D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.csprojResolveAssemblyReference.cache

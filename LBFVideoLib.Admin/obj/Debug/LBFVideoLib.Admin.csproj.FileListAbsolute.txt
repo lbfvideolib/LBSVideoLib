@@ -62,3 +62,16 @@ D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\obj\Debug\LBFVideoLib
 D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csproj.GenerateResource.Cache
 D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.exe
 D:\Development\School\Source\LBSVideoLib\LBSVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.pdb
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Admin.exe.config
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Admin.exe
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Admin.pdb
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\Interop.IWshRuntimeLibrary.dll
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Common.dll
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\Newtonsoft.Json.dll
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Common.pdb
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\Newtonsoft.Json.xml
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.frmSchoolRegistration.resources
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.Properties.Resources.resources
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csproj.GenerateResource.Cache
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.exe
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.pdb
