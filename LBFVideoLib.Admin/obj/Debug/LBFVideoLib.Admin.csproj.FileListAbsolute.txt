@@ -75,3 +75,6 @@ D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csproj.GenerateResource.Cache
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.exe
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.pdb
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csprojResolveAssemblyReference.cache
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.FrmNewTemplate.resources
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.FrmSchoolRegistrationUsingTemplate.resources

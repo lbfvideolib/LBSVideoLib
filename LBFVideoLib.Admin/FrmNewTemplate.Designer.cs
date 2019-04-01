@@ -344,6 +344,7 @@
             this.Controls.Add(this.pnlMain);
             this.Name = "FrmNewTemplate";
             this.Text = "LBF AR Books - New Template";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmNewTemplate_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

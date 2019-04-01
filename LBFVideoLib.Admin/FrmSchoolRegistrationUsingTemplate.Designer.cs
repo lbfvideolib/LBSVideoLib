@@ -34,26 +34,22 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.cmbSchoolSession = new System.Windows.Forms.ComboBox();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.chkListBooks = new System.Windows.Forms.CheckedListBox();
-            this.chkListSubject = new System.Windows.Forms.CheckedListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chkListSeries = new System.Windows.Forms.CheckedListBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.chkListClass = new System.Windows.Forms.CheckedListBox();
+            this.cmdCustomRegistration = new System.Windows.Forms.Button();
+            this.cmdCreateTemplate = new System.Windows.Forms.Button();
+            this.cmbTemplate = new System.Windows.Forms.ComboBox();
+            this.lblTemplate = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSchoolCode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -79,7 +75,7 @@
             // txtNoOfPcs
             // 
             this.txtNoOfPcs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoOfPcs.Location = new System.Drawing.Point(243, 203);
+            this.txtNoOfPcs.Location = new System.Drawing.Point(243, 324);
             this.txtNoOfPcs.Multiline = true;
             this.txtNoOfPcs.Name = "txtNoOfPcs";
             this.txtNoOfPcs.Size = new System.Drawing.Size(424, 28);
@@ -90,7 +86,7 @@
             this.lblNoOfPc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.lblNoOfPc.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoOfPc.ForeColor = System.Drawing.Color.White;
-            this.lblNoOfPc.Location = new System.Drawing.Point(114, 203);
+            this.lblNoOfPc.Location = new System.Drawing.Point(114, 324);
             this.lblNoOfPc.Name = "lblNoOfPc";
             this.lblNoOfPc.Size = new System.Drawing.Size(129, 28);
             this.lblNoOfPc.TabIndex = 35;
@@ -99,7 +95,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(259, 235);
+            this.progressBar1.Location = new System.Drawing.Point(259, 256);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(310, 28);
             this.progressBar1.TabIndex = 5;
@@ -117,7 +113,7 @@
             "2018-19",
             "2019-20",
             "2020-21"});
-            this.cmbSchoolSession.Location = new System.Drawing.Point(492, 165);
+            this.cmbSchoolSession.Location = new System.Drawing.Point(492, 286);
             this.cmbSchoolSession.Name = "cmbSchoolSession";
             this.cmbSchoolSession.Size = new System.Drawing.Size(175, 28);
             this.cmbSchoolSession.TabIndex = 34;
@@ -127,80 +123,12 @@
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(112, 563);
+            this.btnRegister.Location = new System.Drawing.Point(111, 369);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(556, 45);
             this.btnRegister.TabIndex = 33;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(405, 402);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(263, 28);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "Book";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(112, 402);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(262, 28);
-            this.label12.TabIndex = 31;
-            this.label12.Text = "Subject";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(406, 246);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(262, 28);
-            this.label9.TabIndex = 30;
-            this.label9.Text = "Series";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(112, 241);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(262, 28);
-            this.label8.TabIndex = 29;
-            this.label8.Text = "Class";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // chkListBooks
-            // 
-            this.chkListBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkListBooks.FormattingEnabled = true;
-            this.chkListBooks.HorizontalScrollbar = true;
-            this.chkListBooks.Location = new System.Drawing.Point(405, 430);
-            this.chkListBooks.Name = "chkListBooks";
-            this.chkListBooks.Size = new System.Drawing.Size(262, 118);
-            this.chkListBooks.TabIndex = 28;
-            // 
-            // chkListSubject
-            // 
-            this.chkListSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkListSubject.FormattingEnabled = true;
-            this.chkListSubject.HorizontalScrollbar = true;
-            this.chkListSubject.Location = new System.Drawing.Point(112, 430);
-            this.chkListSubject.Name = "chkListSubject";
-            this.chkListSubject.Size = new System.Drawing.Size(262, 118);
-            this.chkListSubject.TabIndex = 27;
             // 
             // panel1
             // 
@@ -271,16 +199,6 @@
             this.label2.Text = "LBF AR Books";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chkListSeries
-            // 
-            this.chkListSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkListSeries.FormattingEnabled = true;
-            this.chkListSeries.HorizontalScrollbar = true;
-            this.chkListSeries.Location = new System.Drawing.Point(406, 271);
-            this.chkListSeries.Name = "chkListSeries";
-            this.chkListSeries.Size = new System.Drawing.Size(262, 118);
-            this.chkListSeries.TabIndex = 26;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
@@ -337,19 +255,15 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cmdCustomRegistration);
+            this.panel3.Controls.Add(this.cmdCreateTemplate);
+            this.panel3.Controls.Add(this.cmbTemplate);
+            this.panel3.Controls.Add(this.lblTemplate);
             this.panel3.Controls.Add(this.txtNoOfPcs);
             this.panel3.Controls.Add(this.lblNoOfPc);
             this.panel3.Controls.Add(this.progressBar1);
             this.panel3.Controls.Add(this.cmbSchoolSession);
             this.panel3.Controls.Add(this.btnRegister);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.chkListBooks);
-            this.panel3.Controls.Add(this.chkListSubject);
-            this.panel3.Controls.Add(this.chkListSeries);
-            this.panel3.Controls.Add(this.chkListClass);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.txtSchoolCode);
             this.panel3.Controls.Add(this.label6);
@@ -367,22 +281,67 @@
             this.panel3.Size = new System.Drawing.Size(1008, 645);
             this.panel3.TabIndex = 27;
             // 
-            // chkListClass
+            // cmdCustomRegistration
             // 
-            this.chkListClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkListClass.FormattingEnabled = true;
-            this.chkListClass.HorizontalScrollbar = true;
-            this.chkListClass.Location = new System.Drawing.Point(112, 271);
-            this.chkListClass.Name = "chkListClass";
-            this.chkListClass.Size = new System.Drawing.Size(262, 118);
-            this.chkListClass.TabIndex = 25;
+            this.cmdCustomRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.cmdCustomRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCustomRegistration.ForeColor = System.Drawing.Color.White;
+            this.cmdCustomRegistration.Location = new System.Drawing.Point(390, 435);
+            this.cmdCustomRegistration.Name = "cmdCustomRegistration";
+            this.cmdCustomRegistration.Size = new System.Drawing.Size(278, 45);
+            this.cmdCustomRegistration.TabIndex = 40;
+            this.cmdCustomRegistration.Text = "Create Custom";
+            this.cmdCustomRegistration.UseVisualStyleBackColor = false;
+            this.cmdCustomRegistration.Click += new System.EventHandler(this.cmdCustomRegistration_Click);
+            // 
+            // cmdCreateTemplate
+            // 
+            this.cmdCreateTemplate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.cmdCreateTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCreateTemplate.ForeColor = System.Drawing.Color.White;
+            this.cmdCreateTemplate.Location = new System.Drawing.Point(111, 435);
+            this.cmdCreateTemplate.Name = "cmdCreateTemplate";
+            this.cmdCreateTemplate.Size = new System.Drawing.Size(278, 45);
+            this.cmdCreateTemplate.TabIndex = 39;
+            this.cmdCreateTemplate.Text = "Create Template";
+            this.cmdCreateTemplate.UseVisualStyleBackColor = false;
+            this.cmdCreateTemplate.Click += new System.EventHandler(this.cmdCreateTemplate_Click);
+            // 
+            // cmbTemplate
+            // 
+            this.cmbTemplate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTemplate.FormattingEnabled = true;
+            this.cmbTemplate.IntegralHeight = false;
+            this.cmbTemplate.ItemHeight = 20;
+            this.cmbTemplate.Items.AddRange(new object[] {
+            "Template1",
+            "Template2",
+            "Template3"});
+            this.cmbTemplate.Location = new System.Drawing.Point(243, 100);
+            this.cmbTemplate.Name = "cmbTemplate";
+            this.cmbTemplate.Size = new System.Drawing.Size(425, 28);
+            this.cmbTemplate.TabIndex = 38;
+            // 
+            // lblTemplate
+            // 
+            this.lblTemplate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.lblTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTemplate.ForeColor = System.Drawing.Color.White;
+            this.lblTemplate.Location = new System.Drawing.Point(112, 100);
+            this.lblTemplate.Name = "lblTemplate";
+            this.lblTemplate.Size = new System.Drawing.Size(129, 28);
+            this.lblTemplate.TabIndex = 37;
+            this.lblTemplate.Text = "Template:";
+            this.lblTemplate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(405, 165);
+            this.label7.Location = new System.Drawing.Point(405, 286);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(88, 28);
             this.label7.TabIndex = 23;
@@ -392,7 +351,7 @@
             // txtSchoolCode
             // 
             this.txtSchoolCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSchoolCode.Location = new System.Drawing.Point(241, 165);
+            this.txtSchoolCode.Location = new System.Drawing.Point(241, 286);
             this.txtSchoolCode.Multiline = true;
             this.txtSchoolCode.Name = "txtSchoolCode";
             this.txtSchoolCode.Size = new System.Drawing.Size(133, 28);
@@ -403,7 +362,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(112, 165);
+            this.label6.Location = new System.Drawing.Point(112, 286);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 28);
             this.label6.TabIndex = 21;
@@ -413,7 +372,7 @@
             // txtSchoolCity
             // 
             this.txtSchoolCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSchoolCity.Location = new System.Drawing.Point(241, 127);
+            this.txtSchoolCity.Location = new System.Drawing.Point(241, 248);
             this.txtSchoolCity.Multiline = true;
             this.txtSchoolCity.Name = "txtSchoolCity";
             this.txtSchoolCity.Size = new System.Drawing.Size(427, 28);
@@ -425,7 +384,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(112, 127);
+            this.label5.Location = new System.Drawing.Point(112, 248);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 28);
             this.label5.TabIndex = 19;
@@ -435,7 +394,7 @@
             // txtSchoolName
             // 
             this.txtSchoolName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSchoolName.Location = new System.Drawing.Point(241, 89);
+            this.txtSchoolName.Location = new System.Drawing.Point(241, 210);
             this.txtSchoolName.Multiline = true;
             this.txtSchoolName.Name = "txtSchoolName";
             this.txtSchoolName.Size = new System.Drawing.Size(427, 28);
@@ -447,7 +406,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(112, 89);
+            this.label1.Location = new System.Drawing.Point(112, 210);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 28);
             this.label1.TabIndex = 17;
@@ -457,7 +416,7 @@
             // txtPwd
             // 
             this.txtPwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPwd.Location = new System.Drawing.Point(241, 51);
+            this.txtPwd.Location = new System.Drawing.Point(241, 172);
             this.txtPwd.Multiline = true;
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = '*';
@@ -470,7 +429,7 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(112, 51);
+            this.label4.Location = new System.Drawing.Point(112, 172);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 28);
             this.label4.TabIndex = 15;
@@ -480,7 +439,7 @@
             // txtEmailId
             // 
             this.txtEmailId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailId.Location = new System.Drawing.Point(241, 13);
+            this.txtEmailId.Location = new System.Drawing.Point(241, 134);
             this.txtEmailId.Multiline = true;
             this.txtEmailId.Name = "txtEmailId";
             this.txtEmailId.Size = new System.Drawing.Size(427, 28);
@@ -492,7 +451,7 @@
             this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(112, 13);
+            this.lblEmail.Location = new System.Drawing.Point(112, 134);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(129, 28);
             this.lblEmail.TabIndex = 13;
@@ -506,7 +465,9 @@
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.pnlMain);
             this.Name = "FrmSchoolRegistrationUsingTemplate";
-            this.Text = "FrmSchoolRegistrationUsingTemplate";
+            this.Text = "LBF AR Books - School Registration";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmSchoolRegistrationUsingTemplate_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -530,26 +491,18 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ComboBox cmbSchoolSession;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckedListBox chkListBooks;
-        private System.Windows.Forms.CheckedListBox chkListSubject;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckedListBox chkListSeries;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.CheckedListBox chkListClass;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSchoolCode;
         private System.Windows.Forms.Label label6;
@@ -561,5 +514,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEmailId;
         private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Button cmdCustomRegistration;
+        private System.Windows.Forms.Button cmdCreateTemplate;
+        private System.Windows.Forms.ComboBox cmbTemplate;
+        private System.Windows.Forms.Label lblTemplate;
     }
 }
