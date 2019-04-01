@@ -53,16 +53,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmNewTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNewTemplate.Designer.cs">
+      <DependentUpon>FrmNewTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSchoolRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSchoolRegistration.Designer.cs">
       <DependentUpon>frmSchoolRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSchoolRegistrationUsingTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSchoolRegistrationUsingTemplate.Designer.cs">
+      <DependentUpon>FrmSchoolRegistrationUsingTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmNewTemplate.resx">
+      <DependentUpon>FrmNewTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSchoolRegistration.resx">
       <DependentUpon>frmSchoolRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSchoolRegistrationUsingTemplate.resx">
+      <DependentUpon>FrmSchoolRegistrationUsingTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
