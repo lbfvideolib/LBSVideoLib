@@ -104,7 +104,7 @@ namespace LBFVideoLib.Client
             lbl.Height = 40;
             lbl.AutoSize = true;
             lbl.AutoEllipsis = true;
-           
+
 
             pnlLbl.Controls.Add(lbl);
             pnlLbl.AutoSize = true;
@@ -124,6 +124,15 @@ namespace LBFVideoLib.Client
                 MemoryStream base64stream = new MemoryStream(base64byte);
                 return Image.FromStream(base64stream);
             }
+        }
+
+        public void DisposeChilds()
+        {
+            this.pict.Click -= Pict_Click;
+            if (this.pict.Image != null)
+                this.pict.Image.Dispose();
+            this.pict.Dispose();
+            this.Controls.Clear();
         }
 
         //protected override void OnClick(EventArgs e)
