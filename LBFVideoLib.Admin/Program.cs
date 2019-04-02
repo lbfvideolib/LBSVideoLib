@@ -15,8 +15,7 @@ namespace LBFVideoLib.Admin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmSchoolRegistration());
-            Application.Run(new FrmNewTemplate());
+            Application.Run(new FrmSchoolRegistrationUsingTemplate());
         }
     }
 }

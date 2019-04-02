@@ -15,5 +15,22 @@ namespace LBFVideoLib.Admin
         {
             InitializeComponent();
         }
+
+        private void cmdCreateTemplate_Click(object sender, EventArgs e)
+        {
+            FrmNewTemplate frmTemplate = new FrmNewTemplate();
+            frmTemplate.Show();
+        }
+
+        private void cmdCustomRegistration_Click(object sender, EventArgs e)
+        {
+            frmSchoolRegistration frmReg = new frmSchoolRegistration();
+            frmReg.Show();
+        }
+
+        private void FrmSchoolRegistrationUsingTemplate_Load(object sender, EventArgs e)
+        {
+            progressBar1.Hide();
+        }
     }
 }

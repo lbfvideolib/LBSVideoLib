@@ -45,6 +45,7 @@ namespace LBFVideoLib.Admin
         {
             try
             {
+                progressBar1.Hide();
                 // read configuration information
                 _sourceVideoFolderPath = ConfigHelper.SourceVideoFolderPath;
                 _clientDistributionRootPath = ConfigHelper.ClientDistributionTargetRootPath;
