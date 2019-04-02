@@ -132,6 +132,14 @@ namespace LBFVideoLib.Client
         //    _clickDeligate(this, e);
         //}
 
+        public void DisposeChilds()
+        {
+            this.pict.Click -= Pict_Click;
+            this.pict.Image.Dispose();
+            this.pict.Dispose();
+            this.Controls.Clear();
+        }
+
     }
 
     public class ImageEx

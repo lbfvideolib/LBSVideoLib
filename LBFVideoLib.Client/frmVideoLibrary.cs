@@ -294,6 +294,11 @@ namespace LBFVideoLib.Client
             {
                 if (flowLayoutVideoPanel.Controls[i].IsDisposed == false)
                 {
+                    if (flowLayoutVideoPanel.Controls[i] is CustomeThumbControl)
+                    {
+                        CustomeThumbControl control = flowLayoutVideoPanel.Controls[i] as CustomeThumbControl;
+                        control.DisposeChilds(); 
+                    }
                     flowLayoutVideoPanel.Controls[i].Click -= CtlThumb_Click;
                     flowLayoutVideoPanel.Controls[i].Dispose();
                 }
