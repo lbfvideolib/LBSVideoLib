@@ -78,3 +78,4 @@ D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csprojResolveAssemblyReference.cache
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.FrmNewTemplate.resources
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.FrmSchoolRegistrationUsingTemplate.resources
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.FrmDeleteTemplate.resources

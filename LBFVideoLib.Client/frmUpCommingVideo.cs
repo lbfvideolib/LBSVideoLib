@@ -479,7 +479,10 @@ namespace LBFVideoLib.Client
         {
             try
             {
-                videoName = videoName.Remove(videoName.LastIndexOf("."));
+                int lstIndex= videoName.LastIndexOf(".");
+                if (lstIndex >= 0 && videoName.Length >= lstIndex) {
+                    videoName = videoName.Remove(videoName.LastIndexOf("."));
+                }
                 string machineName = MacAddressHelper.GetMacAddress(); // Environment.MachineName
                 //List<WatchCountInfoFB> watchCountInfoList = new List<WatchCountInfoFB>();
                 //WatchCountInfoFB info = new WatchCountInfoFB();

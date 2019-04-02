@@ -61,10 +61,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.chkSelectAllBooks = new System.Windows.Forms.CheckBox();
             this.pnlMain.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -122,6 +123,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.chkSelectAllBooks);
             this.panel3.Controls.Add(this.txtNoOfPcs);
             this.panel3.Controls.Add(this.lblNoOfPc);
             this.panel3.Controls.Add(this.progressBar1);
@@ -459,6 +461,19 @@
             this.panel4.Size = new System.Drawing.Size(1362, 43);
             this.panel4.TabIndex = 25;
             // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(38, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(129, 16);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Version 1.0";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // label11
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -496,18 +511,18 @@
             this.label2.Text = "LBF AR Books";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // chkSelectAllBooks
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(38, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 16);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Version 1.0";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.chkSelectAllBooks.AutoSize = true;
+            this.chkSelectAllBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.chkSelectAllBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.chkSelectAllBooks.ForeColor = System.Drawing.Color.White;
+            this.chkSelectAllBooks.Location = new System.Drawing.Point(408, 409);
+            this.chkSelectAllBooks.Name = "chkSelectAllBooks";
+            this.chkSelectAllBooks.Size = new System.Drawing.Size(80, 17);
+            this.chkSelectAllBooks.TabIndex = 37;
+            this.chkSelectAllBooks.Text = "Select All";
+            this.chkSelectAllBooks.UseVisualStyleBackColor = false;
             // 
             // frmSchoolRegistration
             // 
@@ -575,5 +590,6 @@
         private System.Windows.Forms.TextBox txtNoOfPcs;
         private System.Windows.Forms.Label lblNoOfPc;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.CheckBox chkSelectAllBooks;
     }
 }

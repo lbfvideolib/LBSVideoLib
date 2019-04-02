@@ -128,7 +128,8 @@ namespace LBFVideoLib.Common
         public static void DecryptFile(string inputFile, string outputFile)
         {
             try
-            {
+            {               
+
                 UnicodeEncoding UE = new UnicodeEncoding();
                 byte[] key = UE.GetBytes(password);
                 using (FileStream fsCrypt = new FileStream(inputFile, FileMode.Open))

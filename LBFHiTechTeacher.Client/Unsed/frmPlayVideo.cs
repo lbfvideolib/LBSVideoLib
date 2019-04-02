@@ -38,6 +38,19 @@ namespace LBSVideoLib
                     System.IO.Directory.CreateDirectory(tempDirectory);
                     string tempFilePath = Path.Combine(tempDirectory, Path.GetFileName(this.NextVideoFileList[0]));
                     Cryptograph.DecryptFile(this.NextVideoFileList[0], tempFilePath);
+                    //try
+                    //{
+                    //    if (System.IO.File.Exists(tempFilePath))
+                    //    {
+                    //        System.IO.File.Delete(tempFilePath);                        
+                    //    }
+                    //    Cryptograph.DecryptFile(this.NextVideoFileList[0], tempFilePath);
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    TextFileLogger.Log("frmPlayVideo_Load", ex.Message);
+                    //}
+
                     this.axWindowsMediaPlayer1.URL = tempFilePath;
                 }
                 else

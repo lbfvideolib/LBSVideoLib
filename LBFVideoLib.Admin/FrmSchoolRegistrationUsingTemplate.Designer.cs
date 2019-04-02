@@ -61,6 +61,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmailId = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.cmdDeleteTemplate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -255,6 +256,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cmdDeleteTemplate);
             this.panel3.Controls.Add(this.cmdCustomRegistration);
             this.panel3.Controls.Add(this.cmdCreateTemplate);
             this.panel3.Controls.Add(this.cmbTemplate);
@@ -286,9 +288,9 @@
             this.cmdCustomRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
             this.cmdCustomRegistration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCustomRegistration.ForeColor = System.Drawing.Color.White;
-            this.cmdCustomRegistration.Location = new System.Drawing.Point(390, 435);
+            this.cmdCustomRegistration.Location = new System.Drawing.Point(487, 435);
             this.cmdCustomRegistration.Name = "cmdCustomRegistration";
-            this.cmdCustomRegistration.Size = new System.Drawing.Size(278, 45);
+            this.cmdCustomRegistration.Size = new System.Drawing.Size(180, 45);
             this.cmdCustomRegistration.TabIndex = 40;
             this.cmdCustomRegistration.Text = "Create Custom";
             this.cmdCustomRegistration.UseVisualStyleBackColor = false;
@@ -301,7 +303,7 @@
             this.cmdCreateTemplate.ForeColor = System.Drawing.Color.White;
             this.cmdCreateTemplate.Location = new System.Drawing.Point(111, 435);
             this.cmdCreateTemplate.Name = "cmdCreateTemplate";
-            this.cmdCreateTemplate.Size = new System.Drawing.Size(278, 45);
+            this.cmdCreateTemplate.Size = new System.Drawing.Size(180, 45);
             this.cmdCreateTemplate.TabIndex = 39;
             this.cmdCreateTemplate.Text = "Create Template";
             this.cmdCreateTemplate.UseVisualStyleBackColor = false;
@@ -458,6 +460,19 @@
             this.lblEmail.Text = "Email Id:";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // cmdDeleteTemplate
+            // 
+            this.cmdDeleteTemplate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.cmdDeleteTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdDeleteTemplate.ForeColor = System.Drawing.Color.White;
+            this.cmdDeleteTemplate.Location = new System.Drawing.Point(300, 435);
+            this.cmdDeleteTemplate.Name = "cmdDeleteTemplate";
+            this.cmdDeleteTemplate.Size = new System.Drawing.Size(180, 45);
+            this.cmdDeleteTemplate.TabIndex = 41;
+            this.cmdDeleteTemplate.Text = "Delete Template";
+            this.cmdDeleteTemplate.UseVisualStyleBackColor = false;
+            this.cmdDeleteTemplate.Click += new System.EventHandler(this.cmdDeleteTemplate_Click);
+            // 
             // FrmSchoolRegistrationUsingTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -518,5 +533,6 @@
         private System.Windows.Forms.Button cmdCreateTemplate;
         private System.Windows.Forms.ComboBox cmbTemplate;
         private System.Windows.Forms.Label lblTemplate;
+        private System.Windows.Forms.Button cmdDeleteTemplate;
     }
 }

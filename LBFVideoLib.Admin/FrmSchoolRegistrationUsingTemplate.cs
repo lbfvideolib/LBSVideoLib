@@ -32,5 +32,11 @@ namespace LBFVideoLib.Admin
         {
             progressBar1.Hide();
         }
+
+        private void cmdDeleteTemplate_Click(object sender, EventArgs e)
+        {
+            FrmDeleteTemplate frmDeleteTemplate = new FrmDeleteTemplate();
+            frmDeleteTemplate.Show();
+        }
     }
 }

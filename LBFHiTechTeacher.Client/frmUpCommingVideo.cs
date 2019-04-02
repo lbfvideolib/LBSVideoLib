@@ -116,7 +116,7 @@ namespace LBFVideoLib.Client
                 {
                     return;
                 }
-                this.axWindowsMediaPlayer1.URL = "";
+                // this.axWindowsMediaPlayer1.URL = "";
 
                 progressBar1.Visible = true;
 
@@ -388,7 +388,7 @@ namespace LBFVideoLib.Client
             {
                 backgroundWorker1.CancelAsync();
             }
-            //this.axWindowsMediaPlayer1.URL = "";
+            this.axWindowsMediaPlayer1.URL = "";
 
             try
             {
@@ -479,7 +479,11 @@ namespace LBFVideoLib.Client
         {
             try
             {
-                videoName = videoName.Remove(videoName.LastIndexOf("."));
+                int lstIndex = videoName.LastIndexOf(".");
+                if (lstIndex >= 0 && videoName.Length >= lstIndex)
+                {
+                    videoName = videoName.Remove(videoName.LastIndexOf("."));
+                }
                 string machineName = MacAddressHelper.GetMacAddress(); // Environment.MachineName
                 //List<WatchCountInfoFB> watchCountInfoList = new List<WatchCountInfoFB>();
                 //WatchCountInfoFB info = new WatchCountInfoFB();
@@ -575,6 +579,19 @@ namespace LBFVideoLib.Client
                     string tempFilePath = Path.Combine(tempDirectory, Path.GetFileName(currentData.OrignalVideoPath));
                     tempFileList.Add(tempFilePath);
                     Cryptograph.DecryptFile(currentData.OrignalVideoPath, tempFilePath);
+                    //try
+                    //{
+                    //    if (System.IO.File.Exists(tempFilePath))
+                    //    {
+                    //        System.IO.File.Delete(tempFilePath);                          
+                    //    }
+                    //    Cryptograph.DecryptFile(currentData.OrignalVideoPath, tempFilePath);
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    TextFileLogger.Log("backgroundWorker1_DoWork", ex.Message);
+                    //}
+
                     currentData.DecryptedVideoPath = tempFilePath;
                     backgroundWorker1.ReportProgress(99, currentData);
 

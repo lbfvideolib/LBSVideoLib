@@ -135,7 +135,10 @@ namespace LBFVideoLib.Client
         public void DisposeChilds()
         {
             this.pict.Click -= Pict_Click;
-            this.pict.Image.Dispose();
+            if (this.pict.Image != null)
+            {
+                this.pict.Image.Dispose();
+            }
             this.pict.Dispose();
             this.Controls.Clear();
         }

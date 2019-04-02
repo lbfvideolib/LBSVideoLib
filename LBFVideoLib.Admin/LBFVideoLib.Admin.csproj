@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDeleteTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDeleteTemplate.Designer.cs">
+      <DependentUpon>FrmDeleteTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmNewTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDeleteTemplate.resx">
+      <DependentUpon>FrmDeleteTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmNewTemplate.resx">
       <DependentUpon>FrmNewTemplate.cs</DependentUpon>
     </EmbeddedResource>
