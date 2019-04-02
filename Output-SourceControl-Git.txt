@@ -1,0 +1,216 @@
+﻿Opening repositories:
+D:\LBSVideoLib
+
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\bin\Debug\LBFVideoLib.Admin.exe
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\bin\Debug\LBFVideoLib.Admin.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\bin\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\bin\Debug\LBFVideoLib.Common.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFHiTechTeacher.Admin.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFHiTechTeacher.Admin.csproj.GenerateResource.Cache
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFVideoLib.Admin.exe
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFVideoLib.Admin.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Interop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\LBFHiTechTeacher.Client.exe
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\LBFHiTechTeacher.Client.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\LBFVideoLib.Common.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\Interop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.csproj.GenerateResource.Cache
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.csproj.ResolveComReference.cache
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.exe
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Common\bin\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Common\bin\Debug\LBFVideoLib.Common.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Common\obj\Debug\LBFHiTechTeacher.Common.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Common\obj\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Common\obj\Debug\LBFVideoLib.Common.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Admin.exe
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Admin.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Common.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\DesignTimeResolveAssemblyReferences.cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csproj.CoreCompileInputs.cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csproj.GenerateResource.Cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csprojAssemblyReference.cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.exe
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\Interop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Client.exe
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Client.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Common.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\Interop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.CoreCompileInputs.cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.GenerateResource.Cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.ResolveComReference.cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.exe
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Common\bin\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Common\bin\Debug\LBFVideoLib.Common.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Common\obj\Debug\LBFVideoLib.Common.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Common\obj\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Common\obj\Debug\LBFVideoLib.Common.pdb
+Commit 671dda19 created locally in repository D:\LBSVideoLib
+Pushing master
+Remote: Permission to lbfvideolib/LBSVideoLib.git denied to videolib.
+Error encountered while pushing to the remote repository: Git failed with a fatal error.
+unable to access 'https://github.com/lbfvideolib/LBSVideoLib.git/': The requested URL returned error: 403
+Pushing to https://github.com/lbfvideolib/LBSVideoLib.git
+
+Pushing master
+Remote: Permission to lbfvideolib/LBSVideoLib.git denied to videolib.
+Error encountered while pushing to the remote repository: Git failed with a fatal error.
+unable to access 'https://github.com/lbfvideolib/LBSVideoLib.git/': The requested URL returned error: 403
+Pushing to https://github.com/lbfvideolib/LBSVideoLib.git
+
+Remote: Enumerating objects: 38, done.        
+Remote: Counting objects:   2% (1/38)           
+Remote: Counting objects:   5% (2/38)           
+Remote: Counting objects:   7% (3/38)           
+Remote: Counting objects:  10% (4/38)           
+Remote: Counting objects:  13% (5/38)           
+Remote: Counting objects:  15% (6/38)           
+Remote: Counting objects:  18% (7/38)           
+Remote: Counting objects:  21% (8/38)           
+Remote: Counting objects:  23% (9/38)           
+Remote: Counting objects:  26% (10/38)           
+Remote: Counting objects:  28% (11/38)           
+Remote: Counting objects:  31% (12/38)           
+Remote: Counting objects:  34% (13/38)           
+Remote: Counting objects:  36% (14/38)           
+Remote: Counting objects:  39% (15/38)           
+Remote: Counting objects:  42% (16/38)           
+Remote: Counting objects:  44% (17/38)           
+Remote: Counting objects:  47% (18/38)           
+Remote: Counting objects:  50% (19/38)           
+Remote: Counting objects:  52% (20/38)           
+Remote: Counting objects:  55% (21/38)           
+Remote: Counting objects:  57% (22/38)           
+Remote: Counting objects:  60% (23/38)           
+Remote: Counting objects:  63% (24/38)           
+Remote: Counting objects:  65% (25/38)           
+Remote: Counting objects:  68% (26/38)           
+Remote: Counting objects:  71% (27/38)           
+Remote: Counting objects:  73% (28/38)           
+Remote: Counting objects:  76% (29/38)           
+Remote: Counting objects:  78% (30/38)           
+Remote: Counting objects:  81% (31/38)           
+Remote: Counting objects:  84% (32/38)           
+Remote: Counting objects:  86% (33/38)           
+Remote: Counting objects:  89% (34/38)           
+Remote: Counting objects:  92% (35/38)           
+Remote: Counting objects:  94% (36/38)           
+Remote: Counting objects:  97% (37/38)           
+Remote: Counting objects: 100% (38/38)           
+Remote: Counting objects: 100% (38/38), done.        
+Remote: Compressing objects:   6% (1/15)           
+Remote: Compressing objects:  13% (2/15)           
+Remote: Compressing objects:  20% (3/15)           
+Remote: Compressing objects:  26% (4/15)           
+Remote: Compressing objects:  33% (5/15)           
+Remote: Compressing objects:  40% (6/15)           
+Remote: Compressing objects:  46% (7/15)           
+Remote: Compressing objects:  53% (8/15)           
+Remote: Compressing objects:  60% (9/15)           
+Remote: Compressing objects:  66% (10/15)           
+Remote: Compressing objects:  73% (11/15)           
+Remote: Compressing objects:  80% (12/15)           
+Remote: Compressing objects:  86% (13/15)           
+Remote: Compressing objects:  93% (14/15)           
+Remote: Compressing objects: 100% (15/15)           
+Remote: Compressing objects: 100% (15/15), done.        
+Remote: Total 20 (delta 14), reused 8 (delta 2), pack-reused 0        
+The pull would overwrite your local changes to the following 5 files:
+	LBFVideoLib.Admin/FrmNewTemplate.Designer.cs
+	LBFVideoLib.Admin/FrmNewTemplate.cs
+	LBFVideoLib.Admin/Program.cs
+	LBFVideoLib.Admin/obj/Debug/LBFVideoLib.Admin.csproj.FileListAbsolute.txt
+	LBFVideoLib.Admin/obj/Debug/LBFVideoLib.Admin.csproj.GenerateResource.Cache
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\Interop.IWshRuntimeLibrary.dll
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Admin.exe
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Admin.exe.config
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Admin.pdb
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Common.dll
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\LBFVideoLib.Common.pdb
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\Newtonsoft.Json.dll
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\bin\Debug\Newtonsoft.Json.xml
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csproj.CopyComplete
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csproj.CoreCompileInputs.cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csproj.GenerateResource.Cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.csprojAssemblyReference.cache
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.exe
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Admin\obj\Debug\LBFVideoLib.Admin.pdb
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180813_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180818_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180828_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180829_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180830_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180831_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180901_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180902_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180903_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180904_ErrorLog.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180904_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180905_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180926_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180929_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20180930_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20181003_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20190101_Log.txt
+Undoing delete: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\20190103_Log.txt
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\AxInterop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\Interop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Client.exe
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Client.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Common.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\AxInterop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\Interop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.CoreCompileInputs.cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.GenerateResource.Cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.ResolveComReference.cache
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.exe
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.pdb
+The pull would overwrite your local changes to the following 3 files:
+	LBFVideoLib.Admin/FrmNewTemplate.Designer.cs
+	LBFVideoLib.Admin/FrmNewTemplate.cs
+	LBFVideoLib.Admin/Program.cs
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\bin\Debug\LBFVideoLib.Admin.exe
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\bin\Debug\LBFVideoLib.Admin.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFHiTechTeacher.Admin.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFHiTechTeacher.Admin.csproj.GenerateResource.Cache
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFVideoLib.Admin.exe
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFVideoLib.Admin.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\AxInterop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Interop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\LBFHiTechTeacher.Client.exe
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\LBFHiTechTeacher.Client.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\AxInterop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\Interop.WMPLib.dll
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.csproj.GenerateResource.Cache
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.csproj.ResolveComReference.cache
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.exe
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Client\obj\Debug\LBFHiTechTeacher.Client.pdb
+Undoing edit: D:\LBSVideoLib\LBFHiTechTeacher.Common\obj\Debug\LBFHiTechTeacher.Common.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Common\bin\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Common\bin\Debug\LBFVideoLib.Common.pdb
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Common\obj\Debug\LBFVideoLib.Common.csproj.FileListAbsolute.txt
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Common\obj\Debug\LBFVideoLib.Common.dll
+Undoing edit: D:\LBSVideoLib\LBFVideoLib.Common\obj\Debug\LBFVideoLib.Common.pdb
+The pull would overwrite your local changes to the following 3 files:
+	LBFVideoLib.Admin/FrmNewTemplate.Designer.cs
+	LBFVideoLib.Admin/FrmNewTemplate.cs
+	LBFVideoLib.Admin/Program.cs
+The pull would overwrite your local changes to the following 5 files:
+	LBFVideoLib.Admin/FrmNewTemplate.Designer.cs
+	LBFVideoLib.Admin/FrmNewTemplate.cs
+	LBFVideoLib.Admin/Program.cs
+	LBFVideoLib.Admin/obj/Debug/LBFVideoLib.Admin.csproj.FileListAbsolute.txt
+	LBFVideoLib.Admin/obj/Debug/LBFVideoLib.Admin.csproj.GenerateResource.Cache

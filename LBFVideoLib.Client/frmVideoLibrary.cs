@@ -290,6 +290,16 @@ namespace LBFVideoLib.Client
                 GetVideoFileList(currentNodeTag.CurrentDirectoryPath, _videoThumbnailFilePathList);
             }
 
+            for (int i = 0; flowLayoutVideoPanel.Controls != null && i < flowLayoutVideoPanel.Controls.Count; i++)
+            {
+                if (flowLayoutVideoPanel.Controls[i].IsDisposed == false)
+                {
+                    flowLayoutVideoPanel.Controls[i].Click -= CtlThumb_Click;
+                    flowLayoutVideoPanel.Controls[i].Dispose();
+                }
+            }
+            flowLayoutVideoPanel.Controls.Clear();
+
             AddVideoThumbnailControls(_videoThumbnailFilePathList);
         }
 

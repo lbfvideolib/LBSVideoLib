@@ -139,6 +139,7 @@
             this.btnRegister.TabIndex = 33;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // label13
             // 
@@ -197,6 +198,8 @@
             this.chkListBooks.Name = "chkListBooks";
             this.chkListBooks.Size = new System.Drawing.Size(262, 213);
             this.chkListBooks.TabIndex = 28;
+            this.chkListBooks.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListBook_ItemCheck);
+            this.chkListBooks.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chkListBooks_MouseMove);
             // 
             // chkListSubject
             // 
@@ -207,6 +210,8 @@
             this.chkListSubject.Name = "chkListSubject";
             this.chkListSubject.Size = new System.Drawing.Size(262, 213);
             this.chkListSubject.TabIndex = 27;
+            this.chkListSubject.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListSubject_ItemCheck);
+            this.chkListSubject.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chkListSubject_MouseMove);
             // 
             // chkListSeries
             // 
@@ -217,6 +222,8 @@
             this.chkListSeries.Name = "chkListSeries";
             this.chkListSeries.Size = new System.Drawing.Size(262, 213);
             this.chkListSeries.TabIndex = 26;
+            this.chkListSeries.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListSeries_ItemCheck);
+            this.chkListSeries.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chkListSeries_MouseMove);
             // 
             // label2
             // 
@@ -240,6 +247,8 @@
             this.chkListClass.Name = "chkListClass";
             this.chkListClass.Size = new System.Drawing.Size(262, 213);
             this.chkListClass.TabIndex = 25;
+            this.chkListClass.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListClass_ItemCheck);
+            this.chkListClass.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chkListClass_MouseMove);
             // 
             // pnlMain
             // 
@@ -344,6 +353,7 @@
             this.Controls.Add(this.pnlMain);
             this.Name = "FrmNewTemplate";
             this.Text = "LBF AR Books - New Template";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmNewTemplate_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

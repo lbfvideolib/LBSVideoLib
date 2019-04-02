@@ -70,5 +70,13 @@ namespace LBFVideoLib.Common
                 return System.Configuration.ConfigurationManager.AppSettings.Get("thumbnailfilename");
             }
         }
+
+        public static string GetTemplateFolderPath
+        {
+            get
+            {
+                return System.Configuration.ConfigurationManager.AppSettings.Get("templatefolderpath");
+            }
+        }
     }
 }
