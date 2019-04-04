@@ -131,6 +131,7 @@
             this.btnRegister.TabIndex = 33;
             this.btnRegister.Text = "Delete";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // label8
             // 
@@ -171,6 +172,7 @@
             this.chkListClass.Name = "chkListClass";
             this.chkListClass.Size = new System.Drawing.Size(379, 308);
             this.chkListClass.TabIndex = 25;
+            this.chkListClass.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListTemplate_ItemCheck);
             // 
             // pnlMain
             // 
