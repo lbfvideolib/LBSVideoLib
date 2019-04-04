@@ -40,6 +40,21 @@ namespace LBFVideoLib.Common
 
         #region Admin Path Helper Methods
 
+        public static string GetTemplateTargetFolderPath(string templateTargetRootFolderPath, string templateName)
+        {
+          return  Path.Combine(templateTargetRootFolderPath, templateName.Trim());
+        }
+
+        public static string GetTemplateTargetVideoFolderPath (string templateTargetFolderPath,string templateName)
+        {
+            return Path.Combine(templateTargetFolderPath, GetTemplateVideoFolderName(templateName));
+        }
+
+        public static string GetTemplateVideoFolderName ( string templateName)
+        {
+            return   string.Format("{0}_LBFVideos", templateName);
+        }
+
         public static string GetRegisteredSchoolPackageTargetRootPath()
         {
             return ConfigHelper.ClientDistributionTargetRootPath;

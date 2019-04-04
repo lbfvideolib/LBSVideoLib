@@ -73,6 +73,7 @@
     <Compile Include="Entity\SchoolClass.cs" />
     <Compile Include="Entity\Series.cs" />
     <Compile Include="SessionInfo.cs" />
+    <Compile Include="TemplateInfo.cs" />
     <Compile Include="ThumbnailHelper.cs" />
     <Compile Include="VideoInfo.cs" />
   </ItemGroup>
