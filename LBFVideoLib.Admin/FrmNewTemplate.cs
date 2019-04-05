@@ -67,7 +67,7 @@ namespace LBFVideoLib.Admin
             try
             {
                 progressBar1.Visible = false;
-
+                txtTemplateName.Text = string.Empty;
                 //txtEmailId.Text = "";
                 //txtPwd.Text = "";
                 //txtSchoolCity.Text = "";
@@ -93,8 +93,6 @@ namespace LBFVideoLib.Admin
                     schoolClass.ClassName = Path.GetFileName(classNameList[i]);
                     _classList.Add(schoolClass);
                 }
-
-
 
                 chkListClass.DataSource = null;
                 chkListSeries.DataSource = null;
@@ -243,16 +241,21 @@ namespace LBFVideoLib.Admin
 
         private void chkListBook_ItemCheck(object sender, ItemCheckEventArgs e)
         {
+            SelectBook(e.Index, e.NewValue);
+        }
+
+        private void SelectBook(int itemIndex, CheckState newState)
+        {
             try
             {
                 if (_subjectListBindingInProgress == false)
                 {
-                    Book selectedBook = (chkListBooks.Items[e.Index] as Book);
-                    if (e.NewValue == CheckState.Checked)
+                    Book selectedBook = (chkListBooks.Items[itemIndex] as Book);
+                    if (newState == CheckState.Checked)
                     {
                         selectedBook.Selected = true;
                     }
-                    else if (e.NewValue == CheckState.Unchecked)
+                    else if (newState == CheckState.Unchecked)
                     {
                         selectedBook.Selected = false;
                     }
@@ -654,278 +657,255 @@ namespace LBFVideoLib.Admin
 
         private void CreateClientSchoolPackage()
         {
-            //string templateTargetPath = "";
-            //try
-            //{
-            //    progressBar1.Visible = true;
-            //    progressBar1.Value = 10;
+            string templateTargetPath = "";
+            try
+            {
+                progressBar1.Visible = true;
+                progressBar1.Value = 10;
 
-            //    // string schoolCode = txtSchoolCode.Text.Trim();
-            //    templateTargetPath = ClientHelper.GetTemplateTargetFolderPath(_templateFolderPath, txtTemplateName.Text.Trim());
-            //    string templateTargetVideoPath = ClientHelper.GetTemplateTargetVideoFolderPath(templateTargetPath, txtTemplateName.Text.Trim());
-            //    // string clientVideoPath = ClientHelper.GetRegisteredSchoolPackageVideoPath(schoolCode, txtSchoolCity.Text.Trim());
-            //    // string clientThumbnailPath = ClientHelper.GetRegisteredSchoolPackageThumbnailPath(schoolCode); // Path.Combine(clientPacakgeFolderPath, "Thumbnails");
-            //    string clientVideoFolderName = ClientHelper.GetTemplateVideoFolderName(txtTemplateName.Text.Trim());
+                // string schoolCode = txtSchoolCode.Text.Trim();
+                templateTargetPath = ClientHelper.GetTemplateTargetFolderPath(_templateFolderPath, txtTemplateName.Text.Trim());
+                string templateTargetVideoPath = ClientHelper.GetTemplateTargetVideoFolderPath(templateTargetPath, txtTemplateName.Text.Trim());
+                // string clientVideoPath = ClientHelper.GetRegisteredSchoolPackageVideoPath(schoolCode, txtSchoolCity.Text.Trim());
+                // string clientThumbnailPath = ClientHelper.GetRegisteredSchoolPackageThumbnailPath(schoolCode); // Path.Combine(clientPacakgeFolderPath, "Thumbnails");
+                string clientVideoFolderName = ClientHelper.GetTemplateVideoFolderName(txtTemplateName.Text.Trim());
 
-            //    List<VideoInfo> videoInfoList = new List<VideoInfo>();
+                List<VideoInfo> videoInfoList = new List<VideoInfo>();
 
-            //    #region Create Folder Structure
+                #region Create Folder Structure
 
-            //    // Create client distribution root folder.
-            //    if (Directory.Exists(_clientDistributionRootPath) == false)
-            //    {
-            //        Directory.CreateDirectory(_clientDistributionRootPath);
-            //    }
+                // Create client distribution root folder.
+                if (Directory.Exists(_clientDistributionRootPath) == false)
+                {
+                    Directory.CreateDirectory(_clientDistributionRootPath);
+                }
 
-            //    // Define client pacakge root folder path i.e. school code
-            //    if (Directory.Exists(templateTargetPath) == false)
-            //    {
-            //        Directory.CreateDirectory(templateTargetPath);
-            //    }
+                // Define client pacakge root folder path i.e. school code
+                if (Directory.Exists(templateTargetPath) == false)
+                {
+                    Directory.CreateDirectory(templateTargetPath);
+                }
+
+                // Delete all old directory and files
+                else if (Directory.Exists(templateTargetPath))
+                {
+                    string[] oldTemplatePath = Directory.GetDirectories(templateTargetPath);
+                    for (int i = 0; i < oldTemplatePath.Length; i++)
+                    {
+                        //System.IO.File.Delete(Path.Combine(clientSchoolCodeFolderPath, oldClientFiles[i]));
+                        System.IO.Directory.Delete(oldTemplatePath[i], true);
+                    }
+                    oldTemplatePath = Directory.GetFiles(templateTargetPath);
+                    for (int i = 0; i < oldTemplatePath.Length; i++)
+                    {
+                        System.IO.File.Delete(oldTemplatePath[i]);
+                    }
+                }
+                progressBar1.Value = 25;
+
+                // Define client video folder path i.e. SchoolCode_City_LBFVideos
+                if (Directory.Exists(templateTargetVideoPath) == false)
+                {
+                    Directory.CreateDirectory(templateTargetVideoPath);
+                }
+
+                // Make client video folder hidden
+                DirectoryInfo clientVideoFolderInfo = new DirectoryInfo(templateTargetVideoPath);
+                clientVideoFolderInfo.Attributes = FileAttributes.Hidden;
+
+                progressBar1.Value = 30;
+
+                #endregion
+
+                #region Copy Client Distribution
+
+                if (Directory.Exists(ConfigHelper.ClientDistributionPath))
+                {
+                    string[] clientDistributionFiles = Directory.GetFiles(ConfigHelper.ClientDistributionPath);
+                    for (int i = 0; i < clientDistributionFiles.Length; i++)
+                    {
+                        string targetFilePath = Path.Combine(templateTargetPath, Path.GetFileName(clientDistributionFiles[i]));
+
+                        System.IO.File.Copy(Path.Combine(ConfigHelper.ClientDistributionPath, clientDistributionFiles[i]), targetFilePath, true);
+
+                        if (_nonHiddenFiles.Contains(Path.GetFileName(targetFilePath).ToLower()) == false)
+                        {
+                            FileInfo targetFileInfo = new FileInfo(targetFilePath);
+                            targetFileInfo.Attributes = FileAttributes.Hidden;
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Unable to find client distribution on specified path.", "Error", MessageBoxButtons.OK);
+                }
+
+                progressBar1.Value = 45;
+
+                for (int i = 0; i < chkListBooks.CheckedItems.Count; i++)
+                {
+                    Book selectedBook = (chkListBooks.CheckedItems[i]) as Book;
+
+                    if (selectedBook.VideoList != null)
+                    {
+                        foreach (string selectedBookVideo in selectedBook.VideoList)
+                        {
+                            string clientTargetVideoPath = Path.Combine(templateTargetVideoPath, selectedBook.ClassName);
+                            string clientVideoRelativePath = Path.Combine(clientVideoFolderName, selectedBook.ClassName);
+
+                            if (Directory.Exists(clientTargetVideoPath) == false)
+                            {
+                                Directory.CreateDirectory(clientTargetVideoPath);
+                            }
+
+                            DirectoryInfo clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
+                            clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
+
+                            clientTargetVideoPath = Path.Combine(clientTargetVideoPath, selectedBook.SeriesName);
+                            clientVideoRelativePath = Path.Combine(clientVideoRelativePath, selectedBook.SeriesName);
+
+                            if (Directory.Exists(clientTargetVideoPath) == false)
+                            {
+                                Directory.CreateDirectory(clientTargetVideoPath);
+                            }
+                            clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
+                            clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
+
+                            clientTargetVideoPath = Path.Combine(clientTargetVideoPath, selectedBook.SubjectName);
+                            clientVideoRelativePath = Path.Combine(clientVideoRelativePath, selectedBook.SubjectName);
+
+                            if (Directory.Exists(clientTargetVideoPath) == false)
+                            {
+                                Directory.CreateDirectory(clientTargetVideoPath);
+                            }
+                            clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
+                            clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
+
+                            clientTargetVideoPath = Path.Combine(clientTargetVideoPath, selectedBook.BookName);
+                            clientVideoRelativePath = Path.Combine(clientVideoRelativePath, selectedBook.BookName);
+
+                            if (Directory.Exists(clientTargetVideoPath) == false)
+                            {
+                                Directory.CreateDirectory(clientTargetVideoPath);
+                            }
+                            clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
+                            clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
+
+
+                            //if (Directory.Exists(clientTargetVideoPath) == false)
+                            //{
+                            //    Directory.CreateDirectory(clientTargetVideoPath);
+                            //}
+                            //clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
+                            //clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
+
+                            VideoInfo videoInfo = new VideoInfo();
+                            videoInfo.VideoName = Path.GetFileName(selectedBookVideo);
+                            videoInfo.ClassName = selectedBook.ClassName;
+                            videoInfo.SeriesName = selectedBook.SeriesName;
+                            videoInfo.Subject = selectedBook.SubjectName;
+                            videoInfo.Book = selectedBook.BookName;
+                            clientTargetVideoPath = Path.Combine(clientTargetVideoPath, Path.GetFileName(selectedBookVideo));
+                            clientVideoRelativePath = Path.Combine(clientVideoRelativePath, Path.GetFileName(selectedBookVideo));
+                            //videoInfo.VideoFullUrl = clientTargetVideoPath;
+                            videoInfo.VideoFullUrl = clientVideoRelativePath;
+                            videoInfo.VideoRelativeUrl = clientVideoRelativePath;
+
+                            Cryptograph.EncryptFile(selectedBookVideo, clientTargetVideoPath);
+
+                            // Nitin Start 03-Sep
+                            // Copy thumbnail file
+                            string targetThumbnailFilePath = ThumbnailHelper.GetThumbnailDirectoryPathByVideoPath(clientTargetVideoPath);
+
+                            if (System.IO.File.Exists(targetThumbnailFilePath) == false)
+                            {
+                                if (Directory.Exists(targetThumbnailFilePath) == false)
+                                {
+                                    Directory.CreateDirectory(targetThumbnailFilePath);
+                                }
+                                string sourceThumbnailFilePath = ThumbnailHelper.GetThumbnailFilePathByVideoPath(selectedBookVideo);
+                                targetThumbnailFilePath = Path.Combine(targetThumbnailFilePath, ThumbnailHelper.GetThumbnailFileNameByVideoPath(selectedBookVideo));
+                                System.IO.File.Copy(sourceThumbnailFilePath, targetThumbnailFilePath, true);
+                            }
+                            // Nitin End 03-Sep
+
+                            FileInfo clientTargetVideoPathFileInfo = new FileInfo(clientTargetVideoPath);
+                            clientTargetVideoPathFileInfo.Attributes = FileAttributes.Hidden;
+
+                            videoInfoList.Add(videoInfo);
+                        }
+                    }
+                }
+
+
+                #endregion
+
+                progressBar1.Value = 70;
+
+
+
+                // Save data on firebase
+                RegInfoFB selectedClassList = SaveRegDataOnFireBase("");
+
+                string registeredSchoolInfo = Newtonsoft.Json.JsonConvert.SerializeObject(selectedClassList);
+
+
+                progressBar1.Value = 80;
+
+                // Set client email, password and license date in client info class.
+                ClientInfo clientInfo = new ClientInfo();
+                clientInfo.SelectedVideoDetails = selectedClassList.Classes;
+                clientInfo.VideoInfoList = videoInfoList;
+                // Generate client info json file and encrypt it.
+                string clientInfoFilePath = Path.Combine(templateTargetPath, _clientInfoFileName);
+                Cryptograph.EncryptObject(clientInfo, clientInfoFilePath);
+                FileInfo clientInfoFileInfo = new FileInfo(clientInfoFilePath);
+                clientInfoFileInfo.Attributes = FileAttributes.Hidden;
+
+                progressBar1.Value = 99;
+
+                //string clientInfoPlainText = Newtonsoft.Json.JsonConvert.SerializeObject(clientInfo);
+                //sw = System.IO.File.CreateText(Path.Combine(ClientHelper.GetRegisteredSchoolInfoFilePath(), this.txtSchoolCode.Text.Trim() + "-Plain.txt"));
+                //sw.Write(clientInfoPlainText);
+                //sw.Flush();
+                //sw.Close();
+
+                progressBar1.Value = 100;
+                progressBar1.Visible = false;
+
+                // Copy client project bin folder to target location.
+                MessageBox.Show("Template created successfully.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                InitializeRegistrationForm();
+
+            }
+            catch (Exception ex)
+            {
+
+                // Delete all file on folder
+                if (Directory.Exists(templateTargetPath))
+                {
+                    // Delete created package folder inside school code
+                    System.IO.Directory.Delete(templateTargetPath, true);
+                }
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+            finally
+            {
+                progressBar1.Visible = false;
+            }
+        }
+
+        private void chkSelectAllBooks_CheckedChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < chkListBooks.Items.Count; i++)
+            {
+                SelectBook(i, chkSelectAllBooks.CheckState);
                 
-            //    // Delete all old directory and files
-            //    else if (Directory.Exists(templateTargetPath))
-            //    {
-            //        string[] oldTemplatePath = Directory.GetDirectories(templateTargetPath);
-            //        for (int i = 0; i < oldTemplatePath.Length; i++)
-            //        {
-            //            //System.IO.File.Delete(Path.Combine(clientSchoolCodeFolderPath, oldClientFiles[i]));
-            //            System.IO.Directory.Delete(oldTemplatePath[i], true);
-            //        }
-            //        oldTemplatePath = Directory.GetFiles(templateTargetPath);
-            //        for (int i = 0; i < oldTemplatePath.Length; i++)
-            //        {
-            //            System.IO.File.Delete(oldTemplatePath[i]);
-            //        }
-            //    }
-            //    progressBar1.Value = 25;
-
-            //    // Define client video folder path i.e. SchoolCode_City_LBFVideos
-            //    if (Directory.Exists(templateTargetVideoPath) == false)
-            //    {
-            //        Directory.CreateDirectory(templateTargetVideoPath);
-            //    }
-
-            //    // Make client video folder hidden
-            //    DirectoryInfo clientVideoFolderInfo = new DirectoryInfo(templateTargetVideoPath);
-            //    clientVideoFolderInfo.Attributes = FileAttributes.Hidden;
-
-            //    progressBar1.Value = 30;
-
-            //    #endregion
-
-            //    #region Copy Client Distribution
-
-            //    if (Directory.Exists(ConfigHelper.ClientDistributionPath))
-            //    {
-            //        string[] clientDistributionFiles = Directory.GetFiles(ConfigHelper.ClientDistributionPath);
-            //        for (int i = 0; i < clientDistributionFiles.Length; i++)
-            //        {
-            //            string targetFilePath = Path.Combine(templateTargetPath, Path.GetFileName(clientDistributionFiles[i]));
-
-            //            System.IO.File.Copy(Path.Combine(ConfigHelper.ClientDistributionPath, clientDistributionFiles[i]), targetFilePath, true);
-
-            //            if (_nonHiddenFiles.Contains(Path.GetFileName(targetFilePath).ToLower()) == false)
-            //            {
-            //                FileInfo targetFileInfo = new FileInfo(targetFilePath);
-            //                targetFileInfo.Attributes = FileAttributes.Hidden;
-            //            }
-            //        }
-
-            //        //// Create shortcut of exe.
-            //        //WshShellClass shell = new WshShellClass();
-            //        //IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(Path.Combine(clientSchoolCodeFolderPath, "LBSVideoLib.Client.exe.lnk"));
-            //        //shortcut.TargetPath = Path.Combine(clientPacakgeFolderPath, "LBSVideoLib.Client.exe");
-            //        //// add Description of Short cut
-            //        //shortcut.Description = "Run this exe to play LBF Video Library.";
-            //        //// save it / create
-            //        //shortcut.Save();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Unable to find client distribution on specified path.", "Error", MessageBoxButtons.OK);
-            //    }
-
-            //    progressBar1.Value = 45;
-
-            //    for (int i = 0; i < chkListBooks.CheckedItems.Count; i++)
-            //    {
-            //        Book selectedBook = (chkListBooks.CheckedItems[i]) as Book;
-
-            //        if (selectedBook.VideoList != null)
-            //        {
-            //            foreach (string selectedBookVideo in selectedBook.VideoList)
-            //            {
-            //                string clientTargetVideoPath = Path.Combine(templateTargetVideoPath, selectedBook.ClassName);
-            //                string clientVideoRelativePath = Path.Combine(clientVideoFolderName, selectedBook.ClassName);
-
-            //                if (Directory.Exists(clientTargetVideoPath) == false)
-            //                {
-            //                    Directory.CreateDirectory(clientTargetVideoPath);
-            //                }
-
-            //                DirectoryInfo clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
-            //                clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
-
-            //                clientTargetVideoPath = Path.Combine(clientTargetVideoPath, selectedBook.SeriesName);
-            //                clientVideoRelativePath = Path.Combine(clientVideoRelativePath, selectedBook.SeriesName);
-
-            //                if (Directory.Exists(clientTargetVideoPath) == false)
-            //                {
-            //                    Directory.CreateDirectory(clientTargetVideoPath);
-            //                }
-            //                clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
-            //                clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
-
-            //                clientTargetVideoPath = Path.Combine(clientTargetVideoPath, selectedBook.SubjectName);
-            //                clientVideoRelativePath = Path.Combine(clientVideoRelativePath, selectedBook.SubjectName);
-
-            //                if (Directory.Exists(clientTargetVideoPath) == false)
-            //                {
-            //                    Directory.CreateDirectory(clientTargetVideoPath);
-            //                }
-            //                clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
-            //                clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
-
-            //                clientTargetVideoPath = Path.Combine(clientTargetVideoPath, selectedBook.BookName);
-            //                clientVideoRelativePath = Path.Combine(clientVideoRelativePath, selectedBook.BookName);
-
-            //                if (Directory.Exists(clientTargetVideoPath) == false)
-            //                {
-            //                    Directory.CreateDirectory(clientTargetVideoPath);
-            //                }
-            //                clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
-            //                clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
-
-
-            //                //if (Directory.Exists(clientTargetVideoPath) == false)
-            //                //{
-            //                //    Directory.CreateDirectory(clientTargetVideoPath);
-            //                //}
-            //                //clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
-            //                //clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
-
-            //                VideoInfo videoInfo = new VideoInfo();
-            //                videoInfo.VideoName = Path.GetFileName(selectedBookVideo);
-            //                videoInfo.ClassName = selectedBook.ClassName;
-            //                videoInfo.SeriesName = selectedBook.SeriesName;
-            //                videoInfo.Subject = selectedBook.SubjectName;
-            //                videoInfo.Book = selectedBook.BookName;
-            //                clientTargetVideoPath = Path.Combine(clientTargetVideoPath, Path.GetFileName(selectedBookVideo));
-            //                clientVideoRelativePath = Path.Combine(clientVideoRelativePath, Path.GetFileName(selectedBookVideo));
-            //                //videoInfo.VideoFullUrl = clientTargetVideoPath;
-            //                videoInfo.VideoFullUrl = clientVideoRelativePath;
-            //                videoInfo.VideoRelativeUrl = clientVideoRelativePath;
-
-            //                Cryptograph.EncryptFile(selectedBookVideo, clientTargetVideoPath);
-
-            //                // Nitin Start 03-Sep
-            //                // Copy thumbnail file
-            //                string targetThumbnailFilePath = ThumbnailHelper.GetThumbnailDirectoryPathByVideoPath(clientTargetVideoPath);
-
-            //                if (System.IO.File.Exists(targetThumbnailFilePath) == false)
-            //                {
-            //                    if (Directory.Exists(targetThumbnailFilePath) == false)
-            //                    {
-            //                        Directory.CreateDirectory(targetThumbnailFilePath);
-            //                    }
-            //                    string sourceThumbnailFilePath = ThumbnailHelper.GetThumbnailFilePathByVideoPath(selectedBookVideo);
-            //                    targetThumbnailFilePath = Path.Combine(targetThumbnailFilePath, ThumbnailHelper.GetThumbnailFileNameByVideoPath(selectedBookVideo));
-            //                    System.IO.File.Copy(sourceThumbnailFilePath, targetThumbnailFilePath, true);
-            //                }
-            //                // Nitin End 03-Sep
-
-            //                FileInfo clientTargetVideoPathFileInfo = new FileInfo(clientTargetVideoPath);
-            //                clientTargetVideoPathFileInfo.Attributes = FileAttributes.Hidden;
-
-            //                videoInfoList.Add(videoInfo);
-            //            }
-            //        }
-            //    }
-
-            //    //// Nitin Start
-            //    ////string[] subjectThumbnailFiles = Directory.GetFiles(ClientHelper.GetSubjectThumbnailSourcePath());
-            //    ////for (int i = 0; i < subjectThumbnailFiles.Length; i++)
-            //    ////{
-            //    ////    string thumbnailFilePath = Path.Combine(clientThumbnailPath, Path.GetFileName(subjectThumbnailFiles[i]));
-            //    ////    System.IO.File.Copy(subjectThumbnailFiles[i], thumbnailFilePath, true);
-
-            //    ////    FileInfo thumbnailFilePathFileInfo = new FileInfo(thumbnailFilePath);
-            //    ////    thumbnailFilePathFileInfo.Attributes = FileAttributes.Hidden;
-            //    ////}
-            //    //// Nitin End
-            //    #endregion
-
-            //    //progressBar1.Value = 70;
-
-            //    //string newMemoNumber = GenerateNewMemoNumber();
-
-            //    //// Save data on firebase
-            //    //RegInfoFB selectedClassList = SaveRegDataOnFireBase(newMemoNumber);
-
-            //    //string registeredSchoolInfo = Newtonsoft.Json.JsonConvert.SerializeObject(selectedClassList);
-
-            //    //// Nitin Start
-            //    //CreateRegisteredSchoolInfoFile(registeredSchoolInfo, schoolCode, txtSchoolCity.Text.Trim(), txtSchoolName.Text.Trim(), newMemoNumber);
-            //    //// Nitin End
-
-            //    //progressBar1.Value = 80;
-
-            //    //// Set client email, password and license date in client info class.
-            //    //ClientInfo clientInfo = new ClientInfo();
-            //    //clientInfo.EmailId = txtEmailId.Text.ToLower().Trim();
-            //    //clientInfo.Password = txtPwd.Text.Trim();
-            //    //clientInfo.RegistrationDate = DateTime.Now;
-            //    //clientInfo.SessionStartDate = LicenseHelper.GetSessionStartDateBySessionString(cmbSchoolSession.SelectedItem.ToString());
-            //    //clientInfo.SessionEndDate = LicenseHelper.GetSessionEndDateBySessionString(cmbSchoolSession.SelectedItem.ToString());
-            //    //clientInfo.LastAccessEndTime = clientInfo.SessionStartDate;
-            //    //clientInfo.SessionString = cmbSchoolSession.SelectedItem.ToString();
-            //    //clientInfo.SchoolId = this.txtSchoolCode.Text.Trim();
-            //    //clientInfo.SchoolName = this.txtSchoolName.Text.Trim();
-            //    //clientInfo.SchoolCity = txtSchoolCity.Text.Trim();
-            //    //clientInfo.SelectedVideoDetails = selectedClassList.Classes;
-            //    //clientInfo.VideoInfoList = videoInfoList;
-            //    //clientInfo.MemoNumber = newMemoNumber;
-
-            //    //// Generate client info json file and encrypt it.
-            //    //string clientInfoFilePath = Path.Combine(templateTargetPath, _clientInfoFileName);
-            //    //Cryptograph.EncryptObject(clientInfo, clientInfoFilePath);
-            //    //FileInfo clientInfoFileInfo = new FileInfo(clientInfoFilePath);
-            //    //clientInfoFileInfo.Attributes = FileAttributes.Hidden;
-
-            //    //progressBar1.Value = 99;
-
-            //    ////string clientInfoPlainText = Newtonsoft.Json.JsonConvert.SerializeObject(clientInfo);
-            //    ////sw = System.IO.File.CreateText(Path.Combine(ClientHelper.GetRegisteredSchoolInfoFilePath(), this.txtSchoolCode.Text.Trim() + "-Plain.txt"));
-            //    ////sw.Write(clientInfoPlainText);
-            //    ////sw.Flush();
-            //    ////sw.Close();
-
-            //    //progressBar1.Value = 100;
-            //    //progressBar1.Visible = false;
-
-            //    //// Copy client project bin folder to target location.
-            //    //MessageBox.Show("Registration completed successfully.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            //    //InitializeRegistrationForm();
-
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    // Delete all file on folder
-            //    if (Directory.Exists(templateTargetPath))
-            //    {
-            //        // Delete created package folder inside school code
-            //        System.IO.Directory.Delete(templateTargetPath, true);
-            //    }
-            //    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    throw;
-            //}
-            //finally
-            //{
-            //    progressBar1.Visible = false;
-            //}
+                //Book selectedBook = (chkListBooks.Items[i] as Book);
+                //selectedBook.Selected = chkSelectAllBooks.Checked;
+            }
         }
     }
 }

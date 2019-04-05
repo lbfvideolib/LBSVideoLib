@@ -50,10 +50,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.chkSelectAllBooks = new System.Windows.Forms.CheckBox();
             this.txtTemplateName = new System.Windows.Forms.TextBox();
             this.lblTemplateName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.chkSelectAllBooks = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -316,6 +316,20 @@
             this.panel3.Size = new System.Drawing.Size(1008, 645);
             this.panel3.TabIndex = 27;
             // 
+            // chkSelectAllBooks
+            // 
+            this.chkSelectAllBooks.AutoSize = true;
+            this.chkSelectAllBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.chkSelectAllBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.chkSelectAllBooks.ForeColor = System.Drawing.Color.White;
+            this.chkSelectAllBooks.Location = new System.Drawing.Point(409, 317);
+            this.chkSelectAllBooks.Name = "chkSelectAllBooks";
+            this.chkSelectAllBooks.Size = new System.Drawing.Size(80, 17);
+            this.chkSelectAllBooks.TabIndex = 34;
+            this.chkSelectAllBooks.Text = "Select All";
+            this.chkSelectAllBooks.UseVisualStyleBackColor = false;
+            this.chkSelectAllBooks.CheckedChanged += new System.EventHandler(this.chkSelectAllBooks_CheckedChanged);
+            // 
             // txtTemplateName
             // 
             this.txtTemplateName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -347,19 +361,6 @@
             this.panel2.Size = new System.Drawing.Size(1362, 53);
             this.panel2.TabIndex = 12;
             // 
-            // chkSelectAllBooks
-            // 
-            this.chkSelectAllBooks.AutoSize = true;
-            this.chkSelectAllBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.chkSelectAllBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.chkSelectAllBooks.ForeColor = System.Drawing.Color.White;
-            this.chkSelectAllBooks.Location = new System.Drawing.Point(409, 317);
-            this.chkSelectAllBooks.Name = "chkSelectAllBooks";
-            this.chkSelectAllBooks.Size = new System.Drawing.Size(80, 17);
-            this.chkSelectAllBooks.TabIndex = 34;
-            this.chkSelectAllBooks.Text = "Select All";
-            this.chkSelectAllBooks.UseVisualStyleBackColor = false;
-            // 
             // FrmNewTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,6 +385,11 @@
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
+        }
+
+        private void ChkSelectAllBooks_CheckStateChanged(object sender, System.EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
 
         #endregion
