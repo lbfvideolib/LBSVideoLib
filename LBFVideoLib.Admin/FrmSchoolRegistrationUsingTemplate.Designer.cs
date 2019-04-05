@@ -46,6 +46,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cmdDeleteTemplate = new System.Windows.Forms.Button();
             this.cmdCustomRegistration = new System.Windows.Forms.Button();
             this.cmdCreateTemplate = new System.Windows.Forms.Button();
             this.cmbTemplate = new System.Windows.Forms.ComboBox();
@@ -61,7 +62,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmailId = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.cmdDeleteTemplate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -283,6 +283,19 @@
             this.panel3.Size = new System.Drawing.Size(1008, 645);
             this.panel3.TabIndex = 27;
             // 
+            // cmdDeleteTemplate
+            // 
+            this.cmdDeleteTemplate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.cmdDeleteTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdDeleteTemplate.ForeColor = System.Drawing.Color.White;
+            this.cmdDeleteTemplate.Location = new System.Drawing.Point(300, 435);
+            this.cmdDeleteTemplate.Name = "cmdDeleteTemplate";
+            this.cmdDeleteTemplate.Size = new System.Drawing.Size(180, 45);
+            this.cmdDeleteTemplate.TabIndex = 41;
+            this.cmdDeleteTemplate.Text = "Delete Template";
+            this.cmdDeleteTemplate.UseVisualStyleBackColor = false;
+            this.cmdDeleteTemplate.Click += new System.EventHandler(this.cmdDeleteTemplate_Click);
+            // 
             // cmdCustomRegistration
             // 
             this.cmdCustomRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
@@ -317,10 +330,6 @@
             this.cmbTemplate.FormattingEnabled = true;
             this.cmbTemplate.IntegralHeight = false;
             this.cmbTemplate.ItemHeight = 20;
-            this.cmbTemplate.Items.AddRange(new object[] {
-            "Template1",
-            "Template2",
-            "Template3"});
             this.cmbTemplate.Location = new System.Drawing.Point(243, 100);
             this.cmbTemplate.Name = "cmbTemplate";
             this.cmbTemplate.Size = new System.Drawing.Size(425, 28);
@@ -459,19 +468,6 @@
             this.lblEmail.TabIndex = 13;
             this.lblEmail.Text = "Email Id:";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cmdDeleteTemplate
-            // 
-            this.cmdDeleteTemplate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.cmdDeleteTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdDeleteTemplate.ForeColor = System.Drawing.Color.White;
-            this.cmdDeleteTemplate.Location = new System.Drawing.Point(300, 435);
-            this.cmdDeleteTemplate.Name = "cmdDeleteTemplate";
-            this.cmdDeleteTemplate.Size = new System.Drawing.Size(180, 45);
-            this.cmdDeleteTemplate.TabIndex = 41;
-            this.cmdDeleteTemplate.Text = "Delete Template";
-            this.cmdDeleteTemplate.UseVisualStyleBackColor = false;
-            this.cmdDeleteTemplate.Click += new System.EventHandler(this.cmdDeleteTemplate_Click);
             // 
             // FrmSchoolRegistrationUsingTemplate
             // 
