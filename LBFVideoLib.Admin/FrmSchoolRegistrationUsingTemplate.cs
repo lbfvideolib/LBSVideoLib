@@ -1103,7 +1103,11 @@ namespace LBFVideoLib.Admin
             frmSchoolRegistration frmReg = new frmSchoolRegistration();
             frmReg.Show();
         }
-    
+
+        private void FrmSchoolRegistrationUsingTemplate_Load(object sender, EventArgs e)
+        {
+            progressBar1.Hide();
+        }
 
         private void cmdDeleteTemplate_Click(object sender, EventArgs e)
         {

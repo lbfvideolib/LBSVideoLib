@@ -13,6 +13,10 @@ namespace LBFVideoLib.Common
             VideoInfoList = new List<VideoInfo>();
         }
 
+        public string TemplateName { get; set; }
+
+        public string TemplatePath { get; set; }
+        
         public DateTime TemplateCreationDate { get; set; }
 
         public string MemoNumber { get; set; } = "";

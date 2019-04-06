@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LBFVideoLib.Common.Entity
 {
-
+    [Serializable]
     public class RegInfoFB
     {
                 

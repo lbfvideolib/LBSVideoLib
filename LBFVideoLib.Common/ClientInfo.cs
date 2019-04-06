@@ -50,5 +50,8 @@ namespace LBFVideoLib.Common
 
         public List<VideoInfo> VideoInfoList { get; set; }
 
+        // Added this property to transfer object from template to new registration.
+        public RegInfoFB RegistrationInfo { get; set; }
+        
     }
 }
