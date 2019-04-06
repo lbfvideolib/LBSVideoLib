@@ -91,8 +91,12 @@ namespace LBFVideoLib.Admin
                     SchoolClass schoolClass = new SchoolClass();
                     schoolClass.ClassId = classNameList[i];
                     schoolClass.ClassName = Path.GetFileName(classNameList[i]);
+                    schoolClass.SortOrder = CommonHelper.GetClassSortOrder(schoolClass.ClassName);
                     _classList.Add(schoolClass);
                 }
+
+                // Sort Class Name
+                _classList = _classList.OrderBy(s => s.SortOrder).ToList();
 
                 chkListClass.DataSource = null;
                 chkListSeries.DataSource = null;
