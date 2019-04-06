@@ -478,7 +478,6 @@
             this.Name = "FrmSchoolRegistrationUsingTemplate";
             this.Text = "LBF AR Books - School Registration";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmSchoolRegistrationUsingTemplate_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
