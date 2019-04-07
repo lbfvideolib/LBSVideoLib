@@ -197,7 +197,14 @@ namespace LBFVideoLib.Admin
                     string clientRelativePath = string.Join(Path.DirectorySeparatorChar.ToString(), templateVideoInfo.VideoRelativeUrl.Split(Path.DirectorySeparatorChar), 0, spiltedPath.Length);
                    // string joinedPath = string.Join(Path.DirectorySeparatorChar.ToString(), templateVideoInfo.VideoRelativeUrl.Split(Path.DirectorySeparatorChar), 0, spiltedPath.Length - 1);
                     templateVideoInfo.VideoRelativeUrl = clientRelativePath;
-                   // templateVideoInfo.VideoFullUrl = Path.Combine(client);
+                   // templateVideoInfo.VideoFullUrl = Path.Combine(client)
+//{ string[6]}
+//    [0]: "B_LBFVideos"
+//    [1]: "Class2"
+//    [2]: "Series2"
+//    [3]: "Subject2"
+//    [4]: "Book2"
+//    [5]: "VID-20170823-WA0025.mp4"
                 }
 
                 #endregion
