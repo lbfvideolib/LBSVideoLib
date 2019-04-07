@@ -130,6 +130,7 @@
             this.btnRegister.TabIndex = 33;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // panel1
             // 
@@ -334,6 +335,7 @@
             this.cmbTemplate.Name = "cmbTemplate";
             this.cmbTemplate.Size = new System.Drawing.Size(425, 28);
             this.cmbTemplate.TabIndex = 38;
+            this.cmbTemplate.SelectedIndexChanged += new System.EventHandler(this.cmbTemplate_SelectedIndexChanged);
             // 
             // lblTemplate
             // 
@@ -478,6 +480,7 @@
             this.Name = "FrmSchoolRegistrationUsingTemplate";
             this.Text = "LBF AR Books - School Registration";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmSchoolRegistrationUsingTemplate_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
