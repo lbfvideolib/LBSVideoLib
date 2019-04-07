@@ -44,8 +44,8 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.chkSelectAllBooks = new System.Windows.Forms.CheckBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -232,16 +232,6 @@
             this.panel3.Size = new System.Drawing.Size(1008, 645);
             this.panel3.TabIndex = 27;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1362, 53);
-            this.panel2.TabIndex = 12;
-            // 
             // chkSelectAllBooks
             // 
             this.chkSelectAllBooks.AutoSize = true;
@@ -256,12 +246,23 @@
             this.chkSelectAllBooks.UseVisualStyleBackColor = false;
             this.chkSelectAllBooks.CheckedChanged += new System.EventHandler(this.chkListTemplate_ItemCheck);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1362, 53);
+            this.panel2.TabIndex = 12;
+            // 
             // FrmDeleteTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Controls.Add(this.pnlMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmDeleteTemplate";
             this.Text = "LBF AR Books - Delete Template";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

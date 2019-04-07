@@ -53,16 +53,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDeleteTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDeleteTemplate.Designer.cs">
+      <DependentUpon>FrmDeleteTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNewTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNewTemplate.Designer.cs">
+      <DependentUpon>FrmNewTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSchoolRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSchoolRegistration.Designer.cs">
       <DependentUpon>frmSchoolRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSchoolRegistrationUsingTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSchoolRegistrationUsingTemplate.Designer.cs">
+      <DependentUpon>FrmSchoolRegistrationUsingTemplate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDeleteTemplate.resx">
+      <DependentUpon>FrmDeleteTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNewTemplate.resx">
+      <DependentUpon>FrmNewTemplate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSchoolRegistration.resx">
       <DependentUpon>frmSchoolRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSchoolRegistrationUsingTemplate.resx">
+      <DependentUpon>FrmSchoolRegistrationUsingTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,9 +119,9 @@
     <Content Include="LBF.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LBFHiTechTeacher.Common\LBFHiTechTeacher.Common.csproj">
-      <Project>{39aaaf7f-0fed-4051-a1bc-c872c9e22cc2}</Project>
-      <Name>LBFHiTechTeacher.Common</Name>
+    <ProjectReference Include="..\LBFVideoLib.Common\LBFVideoLib.Common.csproj">
+      <Project>{b091d00d-56fe-4a44-a42c-bb4efde2bd11}</Project>
+      <Name>LBFVideoLib.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

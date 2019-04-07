@@ -35,7 +35,6 @@
             this.cmbSchoolSession = new System.Windows.Forms.ComboBox();
             this.btnRegister = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -62,8 +61,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmailId = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -71,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNoOfPcs
@@ -141,16 +141,6 @@
             this.panel1.Size = new System.Drawing.Size(354, 645);
             this.panel1.TabIndex = 26;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 93);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(327, 397);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
@@ -196,9 +186,9 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(652, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 24);
+            this.label2.Size = new System.Drawing.Size(212, 24);
             this.label2.TabIndex = 5;
-            this.label2.Text = "LBF AR Books";
+            this.label2.Text = "LBF Hi-Tech Teacher";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
@@ -471,6 +461,17 @@
             this.lblEmail.Text = "Email Id:";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 93);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(351, 397);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // FrmSchoolRegistrationUsingTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -479,11 +480,10 @@
             this.Controls.Add(this.pnlMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSchoolRegistrationUsingTemplate";
-            this.Text = "LBF AR Books - School Registration";
+            this.Text = "LBF Hi-Tech Teacher - School Registration";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmSchoolRegistrationUsingTemplate_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -494,6 +494,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,7 +507,6 @@
         private System.Windows.Forms.ComboBox cmbSchoolSession;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label11;
@@ -533,5 +533,6 @@
         private System.Windows.Forms.ComboBox cmbTemplate;
         private System.Windows.Forms.Label lblTemplate;
         private System.Windows.Forms.Button cmdDeleteTemplate;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
