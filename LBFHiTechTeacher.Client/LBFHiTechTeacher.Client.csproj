@@ -199,9 +199,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LBFHiTechTeacher.Common\LBFHiTechTeacher.Common.csproj">
-      <Project>{39aaaf7f-0fed-4051-a1bc-c872c9e22cc2}</Project>
-      <Name>LBFHiTechTeacher.Common</Name>
+    <ProjectReference Include="..\LBFVideoLib.Common\LBFVideoLib.Common.csproj">
+      <Project>{b091d00d-56fe-4a44-a42c-bb4efde2bd11}</Project>
+      <Name>LBFVideoLib.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
