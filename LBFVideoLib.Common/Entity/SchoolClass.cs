@@ -12,7 +12,7 @@ namespace LBFVideoLib.Common
         public string ClassName { get; set; }
         public List<Series> SeriesList { get; set; }
         public bool Selected { get; set; }
-
+        public int SortOrder { get; set; }
         public SchoolClass()
         {
             this.SeriesList = new List<Series>();
