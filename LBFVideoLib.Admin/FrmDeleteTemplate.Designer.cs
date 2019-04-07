@@ -38,13 +38,14 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.chkListClass = new System.Windows.Forms.CheckedListBox();
+            this.chkListTemplate = new System.Windows.Forms.CheckedListBox();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chkSelectAllBooks = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -158,21 +159,21 @@
             this.label2.Text = "LBF AR Books";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // chkListClass
+            // chkListTemplate
             // 
-            this.chkListClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkListClass.FormattingEnabled = true;
-            this.chkListClass.HorizontalScrollbar = true;
-            this.chkListClass.Items.AddRange(new object[] {
+            this.chkListTemplate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkListTemplate.FormattingEnabled = true;
+            this.chkListTemplate.HorizontalScrollbar = true;
+            this.chkListTemplate.Items.AddRange(new object[] {
             "Template1",
             "Template2",
             "Template3",
             "Template4"});
-            this.chkListClass.Location = new System.Drawing.Point(198, 135);
-            this.chkListClass.Name = "chkListClass";
-            this.chkListClass.Size = new System.Drawing.Size(379, 308);
-            this.chkListClass.TabIndex = 25;
-            this.chkListClass.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListTemplate_ItemCheck);
+            this.chkListTemplate.Location = new System.Drawing.Point(198, 135);
+            this.chkListTemplate.Name = "chkListTemplate";
+            this.chkListTemplate.Size = new System.Drawing.Size(379, 308);
+            this.chkListTemplate.TabIndex = 25;
+            this.chkListTemplate.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListTemplate_ItemCheck);
             // 
             // pnlMain
             // 
@@ -220,10 +221,11 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.chkSelectAllBooks);
             this.panel3.Controls.Add(this.progressBar1);
             this.panel3.Controls.Add(this.btnRegister);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.chkListClass);
+            this.panel3.Controls.Add(this.chkListTemplate);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(354, 53);
             this.panel3.Name = "panel3";
@@ -239,6 +241,20 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1362, 53);
             this.panel2.TabIndex = 12;
+            // 
+            // chkSelectAllBooks
+            // 
+            this.chkSelectAllBooks.AutoSize = true;
+            this.chkSelectAllBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.chkSelectAllBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.chkSelectAllBooks.ForeColor = System.Drawing.Color.White;
+            this.chkSelectAllBooks.Location = new System.Drawing.Point(201, 112);
+            this.chkSelectAllBooks.Name = "chkSelectAllBooks";
+            this.chkSelectAllBooks.Size = new System.Drawing.Size(80, 17);
+            this.chkSelectAllBooks.TabIndex = 35;
+            this.chkSelectAllBooks.Text = "Select All";
+            this.chkSelectAllBooks.UseVisualStyleBackColor = false;
+            this.chkSelectAllBooks.CheckedChanged += new System.EventHandler(this.chkListTemplate_ItemCheck);
             // 
             // FrmDeleteTemplate
             // 
@@ -259,6 +275,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -276,12 +293,13 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckedListBox chkListClass;
+        private System.Windows.Forms.CheckedListBox chkListTemplate;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox chkSelectAllBooks;
     }
 }

@@ -692,23 +692,9 @@ namespace LBFVideoLib.Admin
                 }
 
                 // Fill template compbo
-                _sourceTemplateFolderPath = ConfigHelper.GetTemplateFolderPath;
-                _templateList.Clear();
+                _sourceTemplateFolderPath = ConfigHelper.GetTemplateFolderPath;                
 
-                string[] templateNameList = Directory.GetDirectories(_sourceTemplateFolderPath);
-
-                for (int i = 0; i < templateNameList.Length; i++)
-                {
-                    TemplateInfo template = new TemplateInfo();
-                    template.TemplateName = Path.GetFileName(templateNameList[i]);
-                    template.TemplatePath = templateNameList[i];
-                    _templateList.Add(template);
-                }
-
-                cmbTemplate.DataSource = _templateList;
-                cmbTemplate.DisplayMember = "TemplateName";
-                cmbTemplate.ValueMember = "TemplatePath";
-                cmbTemplate.SelectedIndex = 0;
+                FillTemplateCombo();   
             }
             catch (Exception ex)
             {
@@ -983,7 +969,13 @@ namespace LBFVideoLib.Admin
         private void cmdCreateTemplate_Click(object sender, EventArgs e)
         {
             FrmNewTemplate frmTemplate = new FrmNewTemplate();
+            frmTemplate.FormClosed += FrmTemplate_FormClosed;      
             frmTemplate.Show();
+        }
+
+        private void FrmTemplate_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FillTemplateCombo();
         }
 
         private void cmdCustomRegistration_Click(object sender, EventArgs e)
@@ -995,12 +987,44 @@ namespace LBFVideoLib.Admin
         private void cmdDeleteTemplate_Click(object sender, EventArgs e)
         {
             FrmDeleteTemplate frmDeleteTemplate = new FrmDeleteTemplate();
+            frmDeleteTemplate.FormClosed += FrmDeleteTemplate_FormClosed;
             frmDeleteTemplate.Show();
+        }
+
+        private void FrmDeleteTemplate_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FillTemplateCombo();
         }
 
         private void cmbTemplate_SelectedIndexChanged(object sender, EventArgs e)
         {
             _selectedTemplate = (cmbTemplate.SelectedItem as TemplateInfo);
+        }
+
+        private void FillTemplateCombo()
+        {
+            // Fill template compbo        
+            _templateList.Clear();
+            cmbTemplate.DataSource = null;
+
+            if (Directory.Exists(_sourceTemplateFolderPath)){
+                string[] templateNameList = Directory.GetDirectories(_sourceTemplateFolderPath);
+
+                if (templateNameList.Length > 0)                {
+
+                    for (int i = 0; i < templateNameList.Length; i++)
+                    {
+                        TemplateInfo template = new TemplateInfo();
+                        template.TemplateName = Path.GetFileName(templateNameList[i]);
+                        template.TemplatePath = templateNameList[i];
+                        _templateList.Add(template);
+                    }
+                    cmbTemplate.DataSource = _templateList;
+                    cmbTemplate.DisplayMember = "TemplateName";
+                    cmbTemplate.ValueMember = "TemplatePath";
+                    cmbTemplate.SelectedIndex = 0;
+                }
+            }
         }
     }
 }
