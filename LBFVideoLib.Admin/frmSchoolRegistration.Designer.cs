@@ -34,6 +34,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.chkSelectAllBooks = new System.Windows.Forms.CheckBox();
             this.txtNoOfPcs = new System.Windows.Forms.TextBox();
             this.lblNoOfPc = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -65,7 +66,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.chkSelectAllBooks = new System.Windows.Forms.CheckBox();
             this.pnlMain.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -153,6 +153,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1008, 645);
             this.panel3.TabIndex = 27;
+            // 
+            // chkSelectAllBooks
+            // 
+            this.chkSelectAllBooks.AutoSize = true;
+            this.chkSelectAllBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.chkSelectAllBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.chkSelectAllBooks.ForeColor = System.Drawing.Color.White;
+            this.chkSelectAllBooks.Location = new System.Drawing.Point(408, 409);
+            this.chkSelectAllBooks.Name = "chkSelectAllBooks";
+            this.chkSelectAllBooks.Size = new System.Drawing.Size(80, 17);
+            this.chkSelectAllBooks.TabIndex = 37;
+            this.chkSelectAllBooks.Text = "Select All";
+            this.chkSelectAllBooks.UseVisualStyleBackColor = false;
+            this.chkSelectAllBooks.CheckedChanged += new System.EventHandler(this.chkSelectAllBooks_CheckedChanged);
             // 
             // txtNoOfPcs
             // 
@@ -510,19 +524,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "LBF AR Books";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // chkSelectAllBooks
-            // 
-            this.chkSelectAllBooks.AutoSize = true;
-            this.chkSelectAllBooks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.chkSelectAllBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.chkSelectAllBooks.ForeColor = System.Drawing.Color.White;
-            this.chkSelectAllBooks.Location = new System.Drawing.Point(408, 409);
-            this.chkSelectAllBooks.Name = "chkSelectAllBooks";
-            this.chkSelectAllBooks.Size = new System.Drawing.Size(80, 17);
-            this.chkSelectAllBooks.TabIndex = 37;
-            this.chkSelectAllBooks.Text = "Select All";
-            this.chkSelectAllBooks.UseVisualStyleBackColor = false;
             // 
             // frmSchoolRegistration
             // 
