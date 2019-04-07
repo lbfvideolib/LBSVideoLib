@@ -14,7 +14,7 @@ namespace LBFVideoLib.Admin
     public partial class FrmSchoolRegistrationUsingTemplate : Form
     {
         #region Private members
-                
+
         private string _sourceVideoFolderPath = "";
         private string _clientDistributionRootPath = "";
         private string _clientInfoFileName = "";
@@ -32,8 +32,10 @@ namespace LBFVideoLib.Admin
         int toolTipIndex = -1;
         private string[] _nonHiddenFiles = { "lbfvideolib.client.exe", "clientinfo.txt" };
 
-        List<Template> _templateList = new List<Template>();
+        List<TemplateInfo> _templateList = new List<TemplateInfo>();
         private string _sourceTemplateFolderPath = "";
+        private TemplateInfo _selectedTemplate = null;
+
 
         #endregion
 
@@ -54,6 +56,8 @@ namespace LBFVideoLib.Admin
                 _clientInfoFileName = ConfigHelper.ClientInfoFileName;
 
                 InitializeRegistrationForm();
+                progressBar1.Hide();
+
             }
             catch (Exception ex)
             {
@@ -94,8 +98,8 @@ namespace LBFVideoLib.Admin
                 string clientVideoPath = ClientHelper.GetRegisteredSchoolPackageVideoPath(schoolCode, txtSchoolCity.Text.Trim());
                 // string clientThumbnailPath = ClientHelper.GetRegisteredSchoolPackageThumbnailPath(schoolCode); // Path.Combine(clientPacakgeFolderPath, "Thumbnails");
                 string clientVideoFolderName = ClientHelper.GetClientVideoFolderName(schoolCode, txtSchoolCity.Text.Trim());
-
-                List<VideoInfo> videoInfoList = new List<VideoInfo>();
+                string clientPackageClientInfoFilePath = Path.Combine(clientSchoolCodePath, ConfigHelper.ClientInfoFileName);
+                //List<VideoInfo> videoInfoList = new List<VideoInfo>();
 
                 #region Create Folder Structure
 
@@ -128,12 +132,6 @@ namespace LBFVideoLib.Admin
                 }
                 progressBar1.Value = 25;
 
-                //// Define client pacakge folder path i.e. pacakage
-                //string clientPacakgeFolderPath = ClientHelper.GetClientRegistrationPackagePath(schoolCode); // Path.Combine(clientSchoolCodeFolderPath, "Package");
-                //if (Directory.Exists(clientPacakgeFolderPath) == false)
-                //{
-                //    Directory.CreateDirectory(clientPacakgeFolderPath);
-                //}
 
                 // Define client video folder path i.e. SchoolCode_City_LBFVideos
                 if (Directory.Exists(clientVideoPath) == false)
@@ -141,16 +139,9 @@ namespace LBFVideoLib.Admin
                     Directory.CreateDirectory(clientVideoPath);
                 }
 
-                // Make client video folder hidden
+                // TBD:Make client video folder hidden
                 DirectoryInfo clientVideoFolderInfo = new DirectoryInfo(clientVideoPath);
                 clientVideoFolderInfo.Attributes = FileAttributes.Hidden;
-
-                //if (Directory.Exists(clientThumbnailPath) == false)
-                //{
-                //    Directory.CreateDirectory(clientThumbnailPath);
-                //}
-                //DirectoryInfo clientPackageThumbnailPathDirInfo = new DirectoryInfo(clientThumbnailPath);
-                //clientPackageThumbnailPathDirInfo.Attributes = FileAttributes.Hidden;
 
                 progressBar1.Value = 30;
 
@@ -173,15 +164,6 @@ namespace LBFVideoLib.Admin
                             targetFileInfo.Attributes = FileAttributes.Hidden;
                         }
                     }
-
-                    //// Create shortcut of exe.
-                    //WshShellClass shell = new WshShellClass();
-                    //IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(Path.Combine(clientSchoolCodeFolderPath, "LBSVideoLib.Client.exe.lnk"));
-                    //shortcut.TargetPath = Path.Combine(clientPacakgeFolderPath, "LBSVideoLib.Client.exe");
-                    //// add Description of Short cut
-                    //shortcut.Description = "Run this exe to play LBF Video Library.";
-                    //// save it / create
-                    //shortcut.Save();
                 }
                 else
                 {
@@ -190,114 +172,23 @@ namespace LBFVideoLib.Admin
 
                 progressBar1.Value = 45;
 
-                //for (int i = 0; i < chkListBooks.CheckedItems.Count; i++)
-                //{
-                //    Book selectedBook = (chkListBooks.CheckedItems[i]) as Book;
+                // Decrypt Template's CLientInfo File
+                string templatesClientInfoFilePath = Path.Combine(_selectedTemplate.TemplatePath, ConfigHelper.ClientInfoFileName);
+                ClientInfo clientInfo = Cryptograph.DecryptObject<ClientInfo>(templatesClientInfoFilePath);
 
-                //    if (selectedBook.VideoList != null)
-                //    {
-                //        //   string[] selectedBookVideos =  Directory.GetFiles(selectedBook.BookId);
+                #endregion
 
-                //        foreach (string selectedBookVideo in selectedBook.VideoList)
-                //        {
-                //            string clientTargetVideoPath = Path.Combine(clientVideoPath, selectedBook.ClassName);
-                //            string clientVideoRelativePath = Path.Combine(clientVideoFolderName, selectedBook.ClassName);
+                #region Copy Video Files
 
-                //            if (Directory.Exists(clientTargetVideoPath) == false)
-                //            {
-                //                Directory.CreateDirectory(clientTargetVideoPath);
-                //            }
+                string templateVideoRootPath = Path.Combine(_selectedTemplate.TemplatePath, ClientHelper.GetTemplateVideoFolderName(_selectedTemplate.TemplateName));
+                // Get template video directories
+                string[] templateVideoDirectoryList = Directory.GetDirectories(templateVideoRootPath);
+                foreach (string templateVideoDirectory in templateVideoDirectoryList)
+                {
+                    string clientPackageVideoDirectoryPath = Path.Combine(clientVideoPath, Path.GetFileName(templateVideoDirectory));
+                    FileHelper.DirectoryCopy(templateVideoDirectory, clientPackageVideoDirectoryPath, true);
+                }
 
-                //            DirectoryInfo clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
-                //            clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
-
-                //            clientTargetVideoPath = Path.Combine(clientTargetVideoPath, selectedBook.SeriesName);
-                //            clientVideoRelativePath = Path.Combine(clientVideoRelativePath, selectedBook.SeriesName);
-
-                //            if (Directory.Exists(clientTargetVideoPath) == false)
-                //            {
-                //                Directory.CreateDirectory(clientTargetVideoPath);
-                //            }
-                //            clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
-                //            clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
-
-                //            clientTargetVideoPath = Path.Combine(clientTargetVideoPath, selectedBook.SubjectName);
-                //            clientVideoRelativePath = Path.Combine(clientVideoRelativePath, selectedBook.SubjectName);
-
-                //            if (Directory.Exists(clientTargetVideoPath) == false)
-                //            {
-                //                Directory.CreateDirectory(clientTargetVideoPath);
-                //            }
-                //            clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
-                //            clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
-
-                //            clientTargetVideoPath = Path.Combine(clientTargetVideoPath, selectedBook.BookName);
-                //            clientVideoRelativePath = Path.Combine(clientVideoRelativePath, selectedBook.BookName);
-
-                //            if (Directory.Exists(clientTargetVideoPath) == false)
-                //            {
-                //                Directory.CreateDirectory(clientTargetVideoPath);
-                //            }
-                //            clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
-                //            clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
-
-
-                //            if (Directory.Exists(clientTargetVideoPath) == false)
-                //            {
-                //                Directory.CreateDirectory(clientTargetVideoPath);
-                //            }
-                //            clientTargetVideoPathInfo = new DirectoryInfo(clientTargetVideoPath);
-                //            clientTargetVideoPathInfo.Attributes = FileAttributes.Hidden;
-
-                //            VideoInfo videoInfo = new VideoInfo();
-                //            videoInfo.VideoName = Path.GetFileName(selectedBookVideo);
-                //            videoInfo.ClassName = selectedBook.ClassName;
-                //            videoInfo.SeriesName = selectedBook.SeriesName;
-                //            videoInfo.Subject = selectedBook.SubjectName;
-                //            videoInfo.Book = selectedBook.BookName;
-                //            clientTargetVideoPath = Path.Combine(clientTargetVideoPath, Path.GetFileName(selectedBookVideo));
-                //            clientVideoRelativePath = Path.Combine(clientVideoRelativePath, Path.GetFileName(selectedBookVideo));
-                //            //videoInfo.VideoFullUrl = clientTargetVideoPath;
-                //            videoInfo.VideoFullUrl = clientVideoRelativePath;
-                //            videoInfo.VideoRelativeUrl = clientVideoRelativePath;
-
-                //            Cryptograph.EncryptFile(selectedBookVideo, clientTargetVideoPath);
-
-                //            // Nitin Start 03-Sep
-                //            // Copy thumbnail file
-                //            string targetThumbnailFilePath = ThumbnailHelper.GetThumbnailDirectoryPathByVideoPath(clientTargetVideoPath);
-
-                //            if (System.IO.File.Exists(targetThumbnailFilePath) == false)
-                //            {
-                //                if (Directory.Exists(targetThumbnailFilePath) == false)
-                //                {
-                //                    Directory.CreateDirectory(targetThumbnailFilePath);
-                //                }
-                //                string sourceThumbnailFilePath = ThumbnailHelper.GetThumbnailFilePathByVideoPath(selectedBookVideo);
-                //                targetThumbnailFilePath = Path.Combine(targetThumbnailFilePath, ThumbnailHelper.GetThumbnailFileNameByVideoPath(selectedBookVideo));
-                //                System.IO.File.Copy(sourceThumbnailFilePath, targetThumbnailFilePath, true);
-                //            }
-                //            // Nitin End 03-Sep
-
-                //            FileInfo clientTargetVideoPathFileInfo = new FileInfo(clientTargetVideoPath);
-                //            clientTargetVideoPathFileInfo.Attributes = FileAttributes.Hidden;
-
-                //            videoInfoList.Add(videoInfo);
-                //        }
-                //    }
-                //}
-
-                // Nitin Start
-                //string[] subjectThumbnailFiles = Directory.GetFiles(ClientHelper.GetSubjectThumbnailSourcePath());
-                //for (int i = 0; i < subjectThumbnailFiles.Length; i++)
-                //{
-                //    string thumbnailFilePath = Path.Combine(clientThumbnailPath, Path.GetFileName(subjectThumbnailFiles[i]));
-                //    System.IO.File.Copy(subjectThumbnailFiles[i], thumbnailFilePath, true);
-
-                //    FileInfo thumbnailFilePathFileInfo = new FileInfo(thumbnailFilePath);
-                //    thumbnailFilePathFileInfo.Attributes = FileAttributes.Hidden;
-                //}
-                // Nitin End
                 #endregion
 
                 progressBar1.Value = 70;
@@ -305,7 +196,7 @@ namespace LBFVideoLib.Admin
                 string newMemoNumber = GenerateNewMemoNumber();
 
                 // Save data on firebase
-                RegInfoFB selectedClassList = SaveRegDataOnFireBase(newMemoNumber);
+                RegInfoFB selectedClassList = SaveRegDataOnFireBase(newMemoNumber, clientInfo.RegistrationInfo);
 
                 string registeredSchoolInfo = Newtonsoft.Json.JsonConvert.SerializeObject(selectedClassList);
 
@@ -316,7 +207,7 @@ namespace LBFVideoLib.Admin
                 progressBar1.Value = 80;
 
                 // Set client email, password and license date in client info class.
-                ClientInfo clientInfo = new ClientInfo();
+                //  ClientInfo clientInfo = new ClientInfo();
                 clientInfo.EmailId = txtEmailId.Text.ToLower().Trim();
                 clientInfo.Password = txtPwd.Text.Trim();
                 clientInfo.RegistrationDate = DateTime.Now;
@@ -328,13 +219,13 @@ namespace LBFVideoLib.Admin
                 clientInfo.SchoolName = this.txtSchoolName.Text.Trim();
                 clientInfo.SchoolCity = txtSchoolCity.Text.Trim();
                 clientInfo.SelectedVideoDetails = selectedClassList.Classes;
-                clientInfo.VideoInfoList = videoInfoList;
+                // clientInfo.VideoInfoList = videoInfoList;
                 clientInfo.MemoNumber = newMemoNumber;
 
                 // Generate client info json file and encrypt it.
                 string clientInfoFilePath = Path.Combine(clientSchoolCodePath, _clientInfoFileName);
-                Cryptograph.EncryptObject(clientInfo, clientInfoFilePath);
-                FileInfo clientInfoFileInfo = new FileInfo(clientInfoFilePath);
+                Cryptograph.EncryptObject(clientInfo, clientPackageClientInfoFilePath);
+                FileInfo clientInfoFileInfo = new FileInfo(clientPackageClientInfoFilePath);
                 clientInfoFileInfo.Attributes = FileAttributes.Hidden;
 
                 progressBar1.Value = 99;
@@ -756,6 +647,7 @@ namespace LBFVideoLib.Admin
         #endregion
 
         #region Private Methods
+
         private void InitializeRegistrationForm()
         {
             try
@@ -788,34 +680,24 @@ namespace LBFVideoLib.Admin
                     _classList.Add(schoolClass);
                 }
 
-                //chkListClass.DataSource = null;
-                //chkListSeries.DataSource = null;
-                //chkListSubject.DataSource = null;
-                //chkListBooks.DataSource = null;
-
-                //// Fill list box with class list.
-                //((ListBox)this.chkListClass).DataSource = _classList;
-                //((ListBox)this.chkListClass).DisplayMember = "ClassName";
-                //((ListBox)this.chkListClass).ValueMember = "Selected";
-
                 // Fill template compbo
                 _sourceTemplateFolderPath = ConfigHelper.GetTemplateFolderPath;
                 _templateList.Clear();
-                
+
                 string[] templateNameList = Directory.GetDirectories(_sourceTemplateFolderPath);
 
                 for (int i = 0; i < templateNameList.Length; i++)
                 {
-                    Template template = new Template();
-                    template.TemplateId = templateNameList[i];
+                    TemplateInfo template = new TemplateInfo();
                     template.TemplateName = Path.GetFileName(templateNameList[i]);
+                    template.TemplatePath = templateNameList[i];
                     _templateList.Add(template);
                 }
 
                 cmbTemplate.DataSource = _templateList;
                 cmbTemplate.DisplayMember = "TemplateName";
-                cmbTemplate.ValueMember = "TemplateId";
-                cmbTemplate.SelectedIndex = 0;                
+                cmbTemplate.ValueMember = "TemplatePath";
+                cmbTemplate.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -896,10 +778,10 @@ namespace LBFVideoLib.Admin
 
         }
 
-        private RegInfoFB SaveRegDataOnFireBase(string newMemoNumber)
+        private RegInfoFB SaveRegDataOnFireBase(string newMemoNumber, RegInfoFB registrationInfoFB)
         {
 
-            RegInfoFB info = new RegInfoFB();
+            RegInfoFB info = registrationInfoFB; //new RegInfoFB();
             info.RegDate = DateTime.Now.ToString();
             info.LoginEmail = txtEmailId.Text;
             info.Password = txtPwd.Text;
@@ -907,7 +789,8 @@ namespace LBFVideoLib.Admin
             info.City = txtSchoolCity.Text;
             info.Session = cmbSchoolSession.Text;
             info.NoOfPcs = Convert.ToInt32(txtNoOfPcs.Text);
-            info.Classes = new List<ClassFB>();
+            //info.Classes = new List<ClassFB>();
+            info.Classes = registrationInfoFB.Classes;
             info.MemoNumber = newMemoNumber;
             info.ExpiryDate = info.ExpiryDate = LicenseHelper.GetSessionEndDateBySessionString(cmbSchoolSession.SelectedItem.ToString());
             info.SchoolCode = txtSchoolCode.Text.Trim();
@@ -959,6 +842,7 @@ namespace LBFVideoLib.Admin
             }
             return info;
         }
+
         #endregion
 
         //private void chkListClass_MouseMove(object sender, MouseEventArgs e)
@@ -1085,13 +969,6 @@ namespace LBFVideoLib.Admin
         //    }
         //}
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-      
-
         private void cmdCreateTemplate_Click(object sender, EventArgs e)
         {
             FrmNewTemplate frmTemplate = new FrmNewTemplate();
@@ -1104,17 +981,15 @@ namespace LBFVideoLib.Admin
             frmReg.Show();
         }
 
-        private void FrmSchoolRegistrationUsingTemplate_Load(object sender, EventArgs e)
-        {
-            progressBar1.Hide();
-        }
-
         private void cmdDeleteTemplate_Click(object sender, EventArgs e)
         {
             FrmDeleteTemplate frmDeleteTemplate = new FrmDeleteTemplate();
             frmDeleteTemplate.Show();
         }
 
-
+        private void cmbTemplate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _selectedTemplate = (cmbTemplate.SelectedItem as TemplateInfo);
+        }
     }
 }
