@@ -852,6 +852,7 @@ namespace LBFVideoLib.Admin
                 ClientInfo clientInfo = new ClientInfo();
                 clientInfo.SelectedVideoDetails = selectedClassList.Classes;
                 clientInfo.VideoInfoList = videoInfoList;
+                clientInfo.RegistrationInfo = selectedClassList;
                 // Generate client info json file and encrypt it.
                 string clientInfoFilePath = Path.Combine(templateTargetPath, _clientInfoFileName);
                 Cryptograph.EncryptObject(clientInfo, clientInfoFilePath);
