@@ -189,6 +189,17 @@ namespace LBFVideoLib.Admin
                     FileHelper.DirectoryCopy(templateVideoDirectory, clientPackageVideoDirectoryPath, true);
                 }
 
+                foreach (VideoInfo templateVideoInfo in clientInfo.VideoInfoList)
+                {
+                    string clientPackageVideoDirectoryPath = Path.Combine(clientVideoPath, Path.GetFileName(templateVideoInfo.VideoRelativeUrl));
+                    string[] spiltedPath = templateVideoInfo.VideoRelativeUrl.Split(Path.DirectorySeparatorChar);
+                    spiltedPath[0] = clientVideoFolderName;
+                    string clientRelativePath = string.Join(Path.DirectorySeparatorChar.ToString(), templateVideoInfo.VideoRelativeUrl.Split(Path.DirectorySeparatorChar), 0, spiltedPath.Length);
+                   // string joinedPath = string.Join(Path.DirectorySeparatorChar.ToString(), templateVideoInfo.VideoRelativeUrl.Split(Path.DirectorySeparatorChar), 0, spiltedPath.Length - 1);
+                    templateVideoInfo.VideoRelativeUrl = clientRelativePath;
+                   // templateVideoInfo.VideoFullUrl = Path.Combine(client);
+                }
+
                 #endregion
 
                 progressBar1.Value = 70;

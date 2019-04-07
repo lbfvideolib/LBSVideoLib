@@ -68,15 +68,7 @@ namespace LBFVideoLib.Admin
             {
                 progressBar1.Visible = false;
                 txtTemplateName.Text = string.Empty;
-                //txtEmailId.Text = "";
-                //txtPwd.Text = "";
-                //txtSchoolCity.Text = "";
-                //txtSchoolCode.Text = "";
-                //txtSchoolName.Text = "";
-                //txtNoOfPcs.Text = "";
-                //cmbSchoolSession.DataSource = LicenseHelper.GetSessionList();
-                //cmbSchoolSession.SelectedIndex = 0;
-
+              
                 _classList.Clear();
                 _seriesList.Clear();
                 _subjectList.Clear();
