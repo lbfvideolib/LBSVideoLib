@@ -58,12 +58,12 @@ namespace LBFVideoLib.Admin
                 _templateList.Add(template);
             }
 
-            chkListClass.DataSource = null;
+            chkListTemplate.DataSource = null;
 
             // Fill list box with class list.
-            ((ListBox)this.chkListClass).DataSource = _templateList;
-            ((ListBox)this.chkListClass).DisplayMember = "TemplateName";
-            ((ListBox)this.chkListClass).ValueMember = "Selected";
+            ((ListBox)this.chkListTemplate).DataSource = _templateList;
+            ((ListBox)this.chkListTemplate).DisplayMember = "TemplateName";
+            ((ListBox)this.chkListTemplate).ValueMember = "Selected";
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace LBFVideoLib.Admin
         {
             try
             {
-                Template selectedTemplate = (chkListClass.Items[e.Index] as Template);
+                Template selectedTemplate = (chkListTemplate.Items[e.Index] as Template);
                 if (e.NewValue == CheckState.Checked)
                 {
                     selectedTemplate.Selected = true;
@@ -127,5 +127,32 @@ namespace LBFVideoLib.Admin
                 ExceptionHandler.HandleException(ex);
             }
         }
+
+        private void chkListTemplate_ItemCheck(object sender, EventArgs e)
+        {
+            try
+            {
+                bool b = true;
+                if (chkSelectAllBooks.CheckState == CheckState.Checked)
+                {
+                    b = true;
+                }
+                else if (chkSelectAllBooks.CheckState == CheckState.Unchecked)
+                {
+                    b = false;
+                }
+
+                for (int i = 0; i < chkListTemplate.Items.Count; i++)
+                {
+                    chkListTemplate.SetItemChecked(i, b);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+      
     }
 }
