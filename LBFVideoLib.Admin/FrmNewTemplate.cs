@@ -487,7 +487,7 @@ namespace LBFVideoLib.Admin
 
                     }
 
-                          ((ListBox)this.chkListBooks).DataSource = null;
+                    ((ListBox)this.chkListBooks).DataSource = null;
                     ((ListBox)this.chkListBooks).DataSource = _bookList;
                     ((ListBox)this.chkListBooks).DisplayMember = "BookName";
                     ((ListBox)this.chkListBooks).ValueMember = "Selected";
@@ -903,13 +903,28 @@ namespace LBFVideoLib.Admin
 
         private void chkSelectAllBooks_CheckedChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < chkListBooks.Items.Count; i++)
+            try
             {
-                SelectBook(i, chkSelectAllBooks.CheckState);
-                
-                //Book selectedBook = (chkListBooks.Items[i] as Book);
-                //selectedBook.Selected = chkSelectAllBooks.Checked;
+                bool b = true;
+                if (chkSelectAllBooks.CheckState == CheckState.Checked)
+                {
+                    b = true;
+                }
+                else if (chkSelectAllBooks.CheckState == CheckState.Unchecked)
+                {
+                    b = false;
+                }
+
+                for (int i = 0; i < chkListBooks.Items.Count; i++)
+                {
+                    chkListBooks.SetItemChecked(i, b);
+                }
             }
+            catch (Exception ex)
+            {             
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);             
+            }
+
         }
     }
 }
