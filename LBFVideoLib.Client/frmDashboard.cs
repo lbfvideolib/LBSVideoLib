@@ -42,7 +42,7 @@ namespace LBFVideoLib.Client
 
             AddRecomandatedVideos();
             AddMostWatchedVideos();
-            label11.Location = new System.Drawing.Point( panel4.Width / 2 - 150 ,11 );
+            label11.Location = new System.Drawing.Point(panel4.Width / 2 - 150, 11);
             label2.Location = new System.Drawing.Point(panel4.Width / 2 - 75, 15);
         }
 
@@ -82,10 +82,19 @@ namespace LBFVideoLib.Client
 
             // Fill Tree
             string[] rootDirectoryList = Directory.GetDirectories(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity));
+
+            string[] sortedRootDirectoryList = new string[rootDirectoryList.Length];
+
+
+            //for (int i = 0; i < rootDirectoryList.Length; i++)
+            //{
+            //    string classDirectoryName = Path.GetFileName(rootDirectoryList[i]);
+            //    int sortOrder = CommonHelper.GetClassSortOrder(classDirectoryName);
+            //    sortedRootDirectoryList[sortOrder - 1] = rootDirectoryList[i];
+            //}
+
             for (int i = 0; i < rootDirectoryList.Length; i++)
             {
-                //TreeNode rootNode = new TreeNode(ClientInfoObject.SchoolName);
-                //treeView1.Nodes.Add(rootNode);
                 TreeNode rootNode = new TreeNode(Path.GetFileName(rootDirectoryList[i]));
                 rootNode.Name = rootNode.Text;
 
@@ -250,7 +259,7 @@ namespace LBFVideoLib.Client
                 ctlThumb.ThumbName = videoInfoList[j].VideoName;
                 ctlThumb.ThumbUrl = videoInfoList[j].ThumbnailFilePath;
                 ctlThumb.VideoUrl = videoInfoList[j].VideoFullUrl;
-                ctlThumb.LabelWidth = 118;                
+                ctlThumb.LabelWidth = 118;
                 ctlThumb.Size = new System.Drawing.Size(120, 183);
                 ctlThumb.Margin = new Padding(12, 0, 5, 0);
                 flowLayoutPanel.Controls.Add(ctlThumb);
