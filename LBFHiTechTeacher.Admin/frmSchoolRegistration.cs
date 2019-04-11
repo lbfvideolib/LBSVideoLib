@@ -786,8 +786,12 @@ namespace LBFVideoLib.Admin
                     SchoolClass schoolClass = new SchoolClass();
                     schoolClass.ClassId = classNameList[i];
                     schoolClass.ClassName = Path.GetFileName(classNameList[i]);
+                    schoolClass.SortOrder = CommonHelper.GetClassSortOrder(schoolClass.ClassName);
                     _classList.Add(schoolClass);
                 }
+
+                // Sort Class Name
+                _classList = _classList.OrderBy(s => s.SortOrder).ToList();
 
                 chkListClass.DataSource = null;
                 chkListSeries.DataSource = null;
@@ -1063,6 +1067,32 @@ namespace LBFVideoLib.Admin
 
         private void label3_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void chkSelectAllBooks_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                bool b = true;
+                if (chkSelectAllBooks.CheckState == CheckState.Checked)
+                {
+                    b = true;
+                }
+                else if (chkSelectAllBooks.CheckState == CheckState.Unchecked)
+                {
+                    b = false;
+                }
+
+                for (int i = 0; i < chkListBooks.Items.Count; i++)
+                {
+                    chkListBooks.SetItemChecked(i, b);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

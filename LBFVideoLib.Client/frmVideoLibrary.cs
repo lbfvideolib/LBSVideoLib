@@ -108,21 +108,44 @@ namespace LBFVideoLib.Client
         private void FillTreeView()
         {
             treeView1.Nodes.Clear();
-
             // Fill Tree
             string[] rootDirectoryList = Directory.GetDirectories(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity));
+
+            string[] sortedRootDirectoryList = new string[8];
+
             for (int i = 0; i < rootDirectoryList.Length; i++)
             {
-                //TreeNode rootNode = new TreeNode(ClientInfoObject.SchoolName);
-                //treeView1.Nodes.Add(rootNode);
-                TreeNode rootNode = new TreeNode(Path.GetFileName(rootDirectoryList[i]));
-                rootNode.Name = rootNode.Text;
-                TreeTag treeTag = new TreeTag();
-                treeTag.CurrentDirectoryPath = rootDirectoryList[i];
-                rootNode.Tag = treeTag;
-                treeView1.Nodes.Add(rootNode);
-                AddTreeNode(rootNode, rootDirectoryList[i]);
+                string classDirectoryName = Path.GetFileName(rootDirectoryList[i]);
+                int sortOrder = CommonHelper.GetClassSortOrder(classDirectoryName);
+                sortedRootDirectoryList[sortOrder - 1] = rootDirectoryList[i];
             }
+
+            for (int i = 0; i < sortedRootDirectoryList.Length; i++)
+            {
+                if (sortedRootDirectoryList[i] != null)
+                {
+                    TreeNode rootNode = new TreeNode(Path.GetFileName(sortedRootDirectoryList[i]));
+                    rootNode.Name = rootNode.Text;
+                    TreeTag treeTag = new TreeTag();
+                    treeTag.CurrentDirectoryPath = sortedRootDirectoryList[i];
+                    rootNode.Tag = treeTag;
+                    treeView1.Nodes.Add(rootNode);
+                    AddTreeNode(rootNode, sortedRootDirectoryList[i]);
+                }
+            }
+
+            //for (int i = 0; i < rootDirectoryList.Length; i++)
+            //{
+            //    //TreeNode rootNode = new TreeNode(ClientInfoObject.SchoolName);
+            //    //treeView1.Nodes.Add(rootNode);
+            //    TreeNode rootNode = new TreeNode(Path.GetFileName(rootDirectoryList[i]));
+            //    rootNode.Name = rootNode.Text;
+            //    TreeTag treeTag = new TreeTag();
+            //    treeTag.CurrentDirectoryPath = rootDirectoryList[i];
+            //    rootNode.Tag = treeTag;
+            //    treeView1.Nodes.Add(rootNode);
+            //    AddTreeNode(rootNode, rootDirectoryList[i]);
+            //}
         }
 
         private void AddTreeNode(TreeNode parentNode, string currentDirectoryPath)

@@ -53,6 +53,8 @@ namespace LBFVideoLib.Client
 
             catch (Exception ex)
             {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ExceptionHandler.HandleException(ex);
             }
         }
@@ -238,24 +240,66 @@ namespace LBFVideoLib.Client
 
         #region Private Methods
 
+        //private void FillTreeView()
+        //{
+        //    treeView1.Nodes.Clear();
+        //    // Fill Tree
+        //    // get root
+        //    string[] rootDirectoryList = Directory.GetDirectories(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity));
+        //    for (int i = 0; i < rootDirectoryList.Length; i++)
+        //    {
+        //        TreeNode rootNode = new TreeNode(Path.GetFileName(rootDirectoryList[i]));
+        //        rootNode.Name = rootNode.Text;
+        //        TreeTag treeTag = new TreeTag();
+        //        treeTag.CurrentDirectoryPath = rootDirectoryList[i];
+        //        rootNode.Tag = treeTag;
+        //        treeView1.Nodes.Add(rootNode);
+        //        AddTreeNode(rootNode, rootDirectoryList[i]);
+        //    }
+        //}
+
         private void FillTreeView()
         {
             treeView1.Nodes.Clear();
             // Fill Tree
             // get root
             string[] rootDirectoryList = Directory.GetDirectories(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity));
+
+            string[] sortedRootDirectoryList = new string[8];
+
             for (int i = 0; i < rootDirectoryList.Length; i++)
             {
-                TreeNode rootNode = new TreeNode(Path.GetFileName(rootDirectoryList[i]));
-                rootNode.Name = rootNode.Text;
-                TreeTag treeTag = new TreeTag();
-                treeTag.CurrentDirectoryPath = rootDirectoryList[i];
-                rootNode.Tag = treeTag;
-                treeView1.Nodes.Add(rootNode);
-                AddTreeNode(rootNode, rootDirectoryList[i]);
+                string classDirectoryName = Path.GetFileName(rootDirectoryList[i]);
+                int sortOrder = CommonHelper.GetClassSortOrder(classDirectoryName);
+                sortedRootDirectoryList[sortOrder - 1] = rootDirectoryList[i];
             }
-        }
 
+            for (int i = 0; i < sortedRootDirectoryList.Length; i++)
+            {
+                if (sortedRootDirectoryList[i] != null)
+                {
+                    TreeNode rootNode = new TreeNode(Path.GetFileName(sortedRootDirectoryList[i]));
+                    rootNode.Name = rootNode.Text;
+
+                    TreeTag treeTag = new TreeTag();
+                    treeTag.CurrentDirectoryPath = sortedRootDirectoryList[i];
+                    rootNode.Tag = treeTag;
+                    treeView1.Nodes.Add(rootNode);
+                    AddTreeNode(rootNode, sortedRootDirectoryList[i]);
+                }
+            }
+
+            //for (int i = 0; i < rootDirectoryList.Length; i++)
+            //{
+            //    TreeNode rootNode = new TreeNode(Path.GetFileName(rootDirectoryList[i]));
+            //    rootNode.Name = rootNode.Text;
+            //    TreeTag treeTag = new TreeTag();
+            //    treeTag.CurrentDirectoryPath = rootDirectoryList[i];
+            //    rootNode.Tag = treeTag;
+            //    treeView1.Nodes.Add(rootNode);
+            //    AddTreeNode(rootNode, rootDirectoryList[i]);
+            //}
+        }
         private void AddTreeNode(TreeNode parentNode, string currentDirectoryPath)
         {
             string[] directoryList = Directory.GetDirectories(currentDirectoryPath);
@@ -288,11 +332,20 @@ namespace LBFVideoLib.Client
         #endregion
         private void frmUpCommingVideo_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //if (e.CloseReason != CloseReason.ApplicationExitCall)
-            //{
-            //    OnFormVisiblityChangeAndClose();
-            //}
-            Application.Exit();
+            try
+            {
+                //if (e.CloseReason != CloseReason.ApplicationExitCall)
+                //{
+                //    OnFormVisiblityChangeAndClose();
+                //}
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
         }
 
         private void lblContact_Click(object sender, EventArgs e)

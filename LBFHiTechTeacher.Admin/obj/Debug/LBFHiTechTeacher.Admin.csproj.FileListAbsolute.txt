@@ -7,7 +7,10 @@ D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\bin\Debug\Newton
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\bin\Debug\LBFVideoLib.Common.pdb
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\bin\Debug\Newtonsoft.Json.xml
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFHiTechTeacher.Admin.csprojResolveAssemblyReference.cache
+D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFVideoLib.Admin.FrmDeleteTemplate.resources
+D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFVideoLib.Admin.FrmNewTemplate.resources
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFVideoLib.Admin.frmSchoolRegistration.resources
+D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFVideoLib.Admin.FrmSchoolRegistrationUsingTemplate.resources
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFVideoLib.Admin.Properties.Resources.resources
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFHiTechTeacher.Admin.csproj.GenerateResource.Cache
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Admin\obj\Debug\LBFVideoLib.Admin.exe

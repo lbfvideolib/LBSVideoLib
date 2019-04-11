@@ -68,7 +68,7 @@ namespace LBFVideoLib.Admin
             {
                 progressBar1.Visible = false;
                 txtTemplateName.Text = string.Empty;
-              
+
                 _classList.Clear();
                 _seriesList.Clear();
                 _subjectList.Clear();
@@ -852,6 +852,7 @@ namespace LBFVideoLib.Admin
                 ClientInfo clientInfo = new ClientInfo();
                 clientInfo.SelectedVideoDetails = selectedClassList.Classes;
                 clientInfo.VideoInfoList = videoInfoList;
+                clientInfo.RegistrationInfo = selectedClassList;
                 // Generate client info json file and encrypt it.
                 string clientInfoFilePath = Path.Combine(templateTargetPath, _clientInfoFileName);
                 Cryptograph.EncryptObject(clientInfo, clientInfoFilePath);
@@ -913,8 +914,8 @@ namespace LBFVideoLib.Admin
                 }
             }
             catch (Exception ex)
-            {             
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);             
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

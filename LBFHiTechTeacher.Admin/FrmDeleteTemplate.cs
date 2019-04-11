@@ -13,8 +13,14 @@ namespace LBFVideoLib.Admin
 {
     public partial class FrmDeleteTemplate : Form
     {
+        #region Local Members
+
         List<Template> _templateList = new List<Template>();
         private string _sourceTemplateFolderPath = "";
+
+        #endregion Local Members
+
+
 
         public FrmDeleteTemplate()
         {
@@ -23,48 +29,10 @@ namespace LBFVideoLib.Admin
 
         private void FrmDeleteTemplate_Load(object sender, EventArgs e)
         {
-
             InitDeleteTemplateForm();
-
         }
 
-        private void InitDeleteTemplateForm()
-        {
-            try
-            {
-                progressBar1.Visible = false;
-                _sourceTemplateFolderPath = ConfigHelper.GetTemplateFolderPath;
-                FillTemplateList();
-
-            }
-            catch (Exception ex)
-            {
-                ExceptionHandler.HandleException(ex, "", false);
-            }
-        }
-
-        private void FillTemplateList()
-        {
-            _templateList.Clear();
-
-            // Read all folders to fill classes
-            string[] templateNameList = Directory.GetDirectories(_sourceTemplateFolderPath);
-
-            for (int i = 0; i < templateNameList.Length; i++)
-            {
-                Template template = new Template();
-                template.TemplateId = templateNameList[i];
-                template.TemplateName = Path.GetFileName(templateNameList[i]);
-                _templateList.Add(template);
-            }
-
-            chkListTemplate.DataSource = null;
-
-            // Fill list box with class list.
-            ((ListBox)this.chkListTemplate).DataSource = _templateList;
-            ((ListBox)this.chkListTemplate).DisplayMember = "TemplateName";
-            ((ListBox)this.chkListTemplate).ValueMember = "Selected";
-        }
+        #region Events
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -97,7 +65,8 @@ namespace LBFVideoLib.Admin
             }
             catch (Exception ex)
             {
-                ExceptionHandler.HandleException(ex, "", false);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
             }
             finally
             {
@@ -150,9 +119,63 @@ namespace LBFVideoLib.Admin
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
             }
 
         }
-      
+
+        #endregion Events
+
+        #region Private Methods
+
+        private void InitDeleteTemplateForm()
+        {
+            try
+            {
+                progressBar1.Visible = false;
+                _sourceTemplateFolderPath = ConfigHelper.GetTemplateFolderPath;
+                FillTemplateList();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
+        }
+
+        private void FillTemplateList()
+        {
+            try
+            {
+                _templateList.Clear();
+
+                // Read all folders to fill classes
+                string[] templateNameList = Directory.GetDirectories(_sourceTemplateFolderPath);
+
+                for (int i = 0; i < templateNameList.Length; i++)
+                {
+                    Template template = new Template();
+                    template.TemplateId = templateNameList[i];
+                    template.TemplateName = Path.GetFileName(templateNameList[i]);
+                    _templateList.Add(template);
+                }
+
+                chkListTemplate.DataSource = null;
+
+                // Fill list box with class list.
+                ((ListBox)this.chkListTemplate).DataSource = _templateList;
+                ((ListBox)this.chkListTemplate).DisplayMember = "TemplateName";
+                ((ListBox)this.chkListTemplate).ValueMember = "Selected";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
+        }
+
+        #endregion Private Methods
+
     }
 }

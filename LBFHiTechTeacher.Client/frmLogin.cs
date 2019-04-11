@@ -109,10 +109,7 @@ namespace LBFVideoLib.Client
                 MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-
+        
         private RegInfoFB GetFirebaseRegistrationInformation()
         {
             return GetRegInfoFromFirebase(_clientInfo.SchoolId, _clientInfo.SessionString);

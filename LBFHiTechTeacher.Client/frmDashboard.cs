@@ -10,6 +10,8 @@ namespace LBFVideoLib.Client
 {
     public partial class frmDashboard : Form
     {
+        #region LOCAL MEMBERS
+
         //private string _clientRootPath = "";
         //private string _clientInfoFilePath = "";
         public Form ParentFormControl { get; set; }
@@ -23,59 +25,48 @@ namespace LBFVideoLib.Client
         //private List<ThumbnailInfo> _mostWatchedVideosThumbList = new List<ThumbnailInfo>();
         //private List<ThumbnailInfo> _mostRecommandedVideosThumbList = new List<ThumbnailInfo>();
 
+        #endregion LOCAL MEMBERS
+
+        #region CONSTRUCTOR
 
         public frmDashboard()
         {
-            InitializeComponent();
-        }
-
-
-        private void frmDashboard_Load(object sender, EventArgs e)
-        {
-            label11.Location = new System.Drawing.Point(panel4.Width / 2 - 150, 11);
-            label2.Location = new System.Drawing.Point(panel4.Width / 2 - 75, 15);
-
-            _formLoaded = true;
-            lblSessionYears.Text = ClientHelper.GetSessionString(ClientInfoObject.SessionString);
-            lblSchoolWelcome.Text = ClientHelper.GetWelcomeString(ClientInfoObject.SchoolName, ClientInfoObject.SchoolCity, ClientInfoObject.SchoolId);
-            lblExpireDate.Text = ClientHelper.GetExpiryDateString(ClientInfoObject.SessionEndDate);
-
-            FillTreeView();
-            treeView1.CollapseAll();
-
-            AddRecomandatedVideos();
-            AddMostWatchedVideos();
-        }
-
-        private void FillVideoList()
-        {
-            // Fill video list
-            string videoRelativePath = "";
-            for (int i = 0; i < ClientInfoObject.SelectedVideoDetails.Count; i++)
+            try
             {
-                ClassFB classFB = ClientInfoObject.SelectedVideoDetails[i];
-                videoRelativePath = Path.Combine(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity), classFB.Name);
-                for (int k = 0; k < classFB.Series.Count; k++)
-                {
-                    string seriesVideoPath = Path.Combine(videoRelativePath, classFB.Series[k].Name);
-                    for (int j = 0; j < classFB.Series[k].Subjects.Count; j++)
-                    {
-                        string subjectVideoPath = Path.Combine(seriesVideoPath, classFB.Series[k].Subjects[j].Name);
-                        for (int l = 0; l < classFB.Series[k].Subjects[j].Books.Count; l++)
-                        {
-                            string bookVideoPath = Path.Combine(subjectVideoPath, classFB.Series[k].Subjects[j].Books[l].Name);
-                            string[] videoList = Directory.GetFiles(bookVideoPath);
-                            for (int m = 0; m < videoList.Length; m++)
-                            {
-                                _bookVideoList.Add(Path.Combine(bookVideoPath, videoList[m]), videoList[m]);
-                            }
-                        }
-                    }
-                }
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
             }
         }
 
-        #region Private Methods
+        #endregion CONSTRUCTOR
+
+        #region PRIVATE METHODS
+
+        //private void FillTreeView()
+        //{
+        //    treeView1.Nodes.Clear();
+
+        //    // Fill Tree
+        //    string[] rootDirectoryList = Directory.GetDirectories(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity));
+        //    for (int i = 0; i < rootDirectoryList.Length; i++)
+        //    {
+        //        //TreeNode rootNode = new TreeNode(ClientInfoObject.SchoolName);
+        //        //treeView1.Nodes.Add(rootNode);
+        //        TreeNode rootNode = new TreeNode(Path.GetFileName(rootDirectoryList[i]));
+        //        rootNode.Name = rootNode.Text;
+
+        //        TreeTag treeTag = new TreeTag();
+        //        treeTag.CurrentDirectoryPath = rootDirectoryList[i];
+        //        rootNode.Tag = treeTag;
+        //        treeView1.Nodes.Add(rootNode);
+        //        AddTreeNode(rootNode, rootDirectoryList[i]);
+        //    }
+        //}
 
         private void FillTreeView()
         {
@@ -83,19 +74,42 @@ namespace LBFVideoLib.Client
 
             // Fill Tree
             string[] rootDirectoryList = Directory.GetDirectories(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity));
+
+            string[] sortedRootDirectoryList = new string[8];
+
             for (int i = 0; i < rootDirectoryList.Length; i++)
             {
-                //TreeNode rootNode = new TreeNode(ClientInfoObject.SchoolName);
-                //treeView1.Nodes.Add(rootNode);
-                TreeNode rootNode = new TreeNode(Path.GetFileName(rootDirectoryList[i]));
-                rootNode.Name = rootNode.Text;
-
-                TreeTag treeTag = new TreeTag();
-                treeTag.CurrentDirectoryPath = rootDirectoryList[i];
-                rootNode.Tag = treeTag;
-                treeView1.Nodes.Add(rootNode);
-                AddTreeNode(rootNode, rootDirectoryList[i]);
+                string classDirectoryName = Path.GetFileName(rootDirectoryList[i]);
+                int sortOrder = CommonHelper.GetClassSortOrder(classDirectoryName);
+                sortedRootDirectoryList[sortOrder - 1] = rootDirectoryList[i];
             }
+
+            for (int i = 0; i < sortedRootDirectoryList.Length; i++)
+            {
+                if (sortedRootDirectoryList[i] != null)
+                {
+                    TreeNode rootNode = new TreeNode(Path.GetFileName(sortedRootDirectoryList[i]));
+                    rootNode.Name = rootNode.Text;
+
+                    TreeTag treeTag = new TreeTag();
+                    treeTag.CurrentDirectoryPath = sortedRootDirectoryList[i];
+                    rootNode.Tag = treeTag;
+                    treeView1.Nodes.Add(rootNode);
+                    AddTreeNode(rootNode, sortedRootDirectoryList[i]);
+                }
+            }
+
+            //for (int i = 0; i < rootDirectoryList.Length; i++)
+            //{
+            //    TreeNode rootNode = new TreeNode(Path.GetFileName(rootDirectoryList[i]));
+            //    rootNode.Name = rootNode.Text;
+
+            //    TreeTag treeTag = new TreeTag();
+            //    treeTag.CurrentDirectoryPath = rootDirectoryList[i];
+            //    rootNode.Tag = treeTag;
+            //    treeView1.Nodes.Add(rootNode);
+            //    AddTreeNode(rootNode, rootDirectoryList[i]);
+            //}
         }
 
         private void AddTreeNode(TreeNode parentNode, string currentDirectoryPath)
@@ -134,13 +148,32 @@ namespace LBFVideoLib.Client
             this.Hide();
         }
 
-        #endregion
-
-
-
-        private void myButton1_Click(object sender, EventArgs e)
+        private void FillVideoList()
         {
-            PlayVideo();
+            // Fill video list
+            string videoRelativePath = "";
+            for (int i = 0; i < ClientInfoObject.SelectedVideoDetails.Count; i++)
+            {
+                ClassFB classFB = ClientInfoObject.SelectedVideoDetails[i];
+                videoRelativePath = Path.Combine(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity), classFB.Name);
+                for (int k = 0; k < classFB.Series.Count; k++)
+                {
+                    string seriesVideoPath = Path.Combine(videoRelativePath, classFB.Series[k].Name);
+                    for (int j = 0; j < classFB.Series[k].Subjects.Count; j++)
+                    {
+                        string subjectVideoPath = Path.Combine(seriesVideoPath, classFB.Series[k].Subjects[j].Name);
+                        for (int l = 0; l < classFB.Series[k].Subjects[j].Books.Count; l++)
+                        {
+                            string bookVideoPath = Path.Combine(subjectVideoPath, classFB.Series[k].Subjects[j].Books[l].Name);
+                            string[] videoList = Directory.GetFiles(bookVideoPath);
+                            for (int m = 0; m < videoList.Length; m++)
+                            {
+                                _bookVideoList.Add(Path.Combine(bookVideoPath, videoList[m]), videoList[m]);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void PlayVideo()
@@ -153,21 +186,6 @@ namespace LBFVideoLib.Client
             //upcomingVideo.NextVideoFileList = new string[] { Path.Combine(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity), @"First\First-S1\First-S1-English\First-S1-English-Basic\VID-20150929-WA0005.mp4") };
             upcomingVideo.Show();
             this.Hide();
-        }
-
-        private void myButton8_Click(object sender, EventArgs e)
-        {
-            PlayVideo();
-        }
-
-        private void frmDashboard_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void lblContact_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(ClientHelper.GetContactMessageString(), "Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AddRecomandatedVideos()
@@ -258,6 +276,114 @@ namespace LBFVideoLib.Client
             }
         }
 
+        private TreeNode FindVideoParentTreeNode(string videoFullUrl)
+        {
+            return treeView1.FindByFullPath(videoFullUrl).FirstOrDefault();
+        }
+
+        private void CreatePreviousAndNextPlaylist(List<VideoInfo> thumbnailList, string videoUrl, out List<VideoInfo> nextVideoList, out List<VideoInfo> previousVideoList)
+        {
+            nextVideoList = new List<VideoInfo>();
+            previousVideoList = new List<VideoInfo>();
+            int index = thumbnailList.FindIndex(k => k.VideoFullUrl.Equals(videoUrl));
+            for (int i = index + 1; (i < index + 1 + 3) && (i < thumbnailList.Count); i++)
+            {
+                nextVideoList.Add(thumbnailList[i]);
+            }
+
+            for (int i = index - 1; (i > index - 1 - 3) && (i > -1); i--)
+            {
+                previousVideoList.Add(thumbnailList[i]);
+            }
+        }
+
+
+        #endregion PRIVATE METHODS
+
+        #region EVENTS
+
+        private void frmDashboard_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                label11.Location = new System.Drawing.Point(panel4.Width / 2 - 150, 11);
+                label2.Location = new System.Drawing.Point(panel4.Width / 2 - 75, 15);
+
+                _formLoaded = true;
+                lblSessionYears.Text = ClientHelper.GetSessionString(ClientInfoObject.SessionString);
+                lblSchoolWelcome.Text = ClientHelper.GetWelcomeString(ClientInfoObject.SchoolName, ClientInfoObject.SchoolCity, ClientInfoObject.SchoolId);
+                lblExpireDate.Text = ClientHelper.GetExpiryDateString(ClientInfoObject.SessionEndDate);
+
+                FillTreeView();
+                treeView1.CollapseAll();
+
+                AddRecomandatedVideos();
+                AddMostWatchedVideos();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
+        }
+
+        private void myButton8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PlayVideo();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
+        }
+
+        private void frmDashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                Application.Exit();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
+        }
+
+        private void myButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                PlayVideo();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
+        }
+
+        private void lblContact_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show(ClientHelper.GetContactMessageString(), "Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
+        }
 
         private void CtlRecommanded_Click(object sender, EventArgs e)
         {
@@ -285,6 +411,12 @@ namespace LBFVideoLib.Client
                 upcomingVideoForm.DashboardFormControl = this;
                 upcomingVideoForm.Show();
                 this.Hide();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
             }
             finally
             {
@@ -323,51 +455,45 @@ namespace LBFVideoLib.Client
                 upcomingVideoForm.Show();
                 this.Hide();
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
             finally
             {
                 _skipNodeSelection = false;
             }
         }
 
-
-        private TreeNode FindVideoParentTreeNode(string videoFullUrl)
-        {
-            return treeView1.FindByFullPath(videoFullUrl).FirstOrDefault();
-        }
-        private void CreatePreviousAndNextPlaylist(List<VideoInfo> thumbnailList, string videoUrl, out List<VideoInfo> nextVideoList, out List<VideoInfo> previousVideoList)
-        {
-            nextVideoList = new List<VideoInfo>();
-            previousVideoList = new List<VideoInfo>();
-            int index = thumbnailList.FindIndex(k => k.VideoFullUrl.Equals(videoUrl));
-            for (int i = index + 1; (i < index + 1 + 3) && (i < thumbnailList.Count); i++)
-            {
-                nextVideoList.Add(thumbnailList[i]);
-            }
-
-            for (int i = index - 1; (i > index - 1 - 3) && (i > -1); i--)
-            {
-                previousVideoList.Add(thumbnailList[i]);
-            }
-        }
-
         private void frmDashboard_VisibleChanged(object sender, EventArgs e)
         {
-            if (this.Visible && this._formLoaded)
+            try
             {
-                this.SelectedNode = treeView1.Nodes[0];
-                treeView1.CollapseAll();
-            }
-
-            if (this.SelectedNode != null && this.Visible)
-            {
-                TreeNode[] searchedNode = this.treeView1.Nodes.Find(this.SelectedNode.Name, true);
-                if (searchedNode.Length > 0)
+                if (this.Visible && this._formLoaded)
                 {
-                    _skipNodeSelection = true;
-                    this.treeView1.SelectedNode = searchedNode[0];
-                    _skipNodeSelection = false;
+                    this.SelectedNode = treeView1.Nodes[0];
+                    treeView1.CollapseAll();
                 }
-                AddMostWatchedVideos();
+
+                if (this.SelectedNode != null && this.Visible)
+                {
+                    TreeNode[] searchedNode = this.treeView1.Nodes.Find(this.SelectedNode.Name, true);
+                    if (searchedNode.Length > 0)
+                    {
+                        _skipNodeSelection = true;
+                        this.treeView1.SelectedNode = searchedNode[0];
+                        _skipNodeSelection = false;
+                    }
+                    AddMostWatchedVideos();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
             }
 
         }
@@ -388,6 +514,12 @@ namespace LBFVideoLib.Client
                     _skipNodeSelection = false;
                 }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
             finally
             {
                 _skipNodeSelection = false;
@@ -396,8 +528,18 @@ namespace LBFVideoLib.Client
 
         private void lblPrivacyPolicy_Click(object sender, EventArgs e)
         {
-            frmPrivacyPolicy frm = new frmPrivacyPolicy();
-            frm.Show();
+            try
+            {
+                frmPrivacyPolicy frm = new frmPrivacyPolicy();
+                frm.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExceptionHandler.HandleException(ex);
+            }
         }
+
+        #endregion EVENTS
     }
 }

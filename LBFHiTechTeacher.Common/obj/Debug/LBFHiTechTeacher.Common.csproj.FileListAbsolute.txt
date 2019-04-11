@@ -2,6 +2,5 @@ D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Common\bin\Debug\LBFVi
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Common\bin\Debug\LBFVideoLib.Common.pdb
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Common\bin\Debug\Newtonsoft.Json.dll
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Common\bin\Debug\Newtonsoft.Json.xml
-D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Common\obj\Debug\LBFHiTechTeacher.Common.csprojResolveAssemblyReference.cache
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Common\obj\Debug\LBFVideoLib.Common.dll
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Common\obj\Debug\LBFVideoLib.Common.pdb

@@ -9,9 +9,9 @@ namespace LBFVideoLib.Common
         #region Client Path Helper Methods
         public static string GetClientRootPath()
         {
-          // return Directory.GetCurrentDirectory();
-            return @"C:\LBFARBooksSetup\ClientPackages\a";
-            // return @"D:\School\ClientPackages\j";
+           return Directory.GetCurrentDirectory();
+            //return @"C:\LBFARBooksSetup\ClientPackages\dd";           
+           // return @"C:\LBFHiTechTeacherSetup\ClientPackages\t3";
         }
 
         public static string GetClientInfoFilePath()
@@ -23,7 +23,7 @@ namespace LBFVideoLib.Common
         {
             string parentPath = Directory.GetParent(GetClientRootPath()).FullName;
 
-            //return Path.Combine(parentPath, string.Format("{0}_{1}_{2}", schoolCode, schoolCity, "LBFVideos"));
+            //return Path.Combine(parentPath, string.Format("{ 0}_{1}_{2}", schoolCode, schoolCity, "LBFVideos"));
             return Path.Combine(GetClientRootPath(), string.Format("{0}_{1}_{2}", schoolCode, schoolCity, "LBFVideos"));
         }
 

@@ -194,17 +194,10 @@ namespace LBFVideoLib.Admin
                     string clientPackageVideoDirectoryPath = Path.Combine(clientVideoPath, Path.GetFileName(templateVideoInfo.VideoRelativeUrl));
                     string[] spiltedPath = templateVideoInfo.VideoRelativeUrl.Split(Path.DirectorySeparatorChar);
                     spiltedPath[0] = clientVideoFolderName;
-                    string clientRelativePath = string.Join(Path.DirectorySeparatorChar.ToString(), templateVideoInfo.VideoRelativeUrl.Split(Path.DirectorySeparatorChar), 0, spiltedPath.Length);
-                   // string joinedPath = string.Join(Path.DirectorySeparatorChar.ToString(), templateVideoInfo.VideoRelativeUrl.Split(Path.DirectorySeparatorChar), 0, spiltedPath.Length - 1);
+                    string clientRelativePath = string.Join(Path.DirectorySeparatorChar.ToString(), spiltedPath, 0, spiltedPath.Length);
+                    // string joinedPath = string.Join(Path.DirectorySeparatorChar.ToString(), templateVideoInfo.VideoRelativeUrl.Split(Path.DirectorySeparatorChar), 0, spiltedPath.Length - 1);
                     templateVideoInfo.VideoRelativeUrl = clientRelativePath;
-                   // templateVideoInfo.VideoFullUrl = Path.Combine(client)
-//{ string[6]}
-//    [0]: "B_LBFVideos"
-//    [1]: "Class2"
-//    [2]: "Series2"
-//    [3]: "Subject2"
-//    [4]: "Book2"
-//    [5]: "VID-20170823-WA0025.mp4"
+                    templateVideoInfo.VideoFullUrl = Path.Combine(clientSchoolCodePath, templateVideoInfo.VideoRelativeUrl);
                 }
 
                 #endregion
@@ -699,9 +692,9 @@ namespace LBFVideoLib.Admin
                 }
 
                 // Fill template compbo
-                _sourceTemplateFolderPath = ConfigHelper.GetTemplateFolderPath;                
+                _sourceTemplateFolderPath = ConfigHelper.GetTemplateFolderPath;
 
-                FillTemplateCombo();   
+                FillTemplateCombo();
             }
             catch (Exception ex)
             {
@@ -976,7 +969,7 @@ namespace LBFVideoLib.Admin
         private void cmdCreateTemplate_Click(object sender, EventArgs e)
         {
             FrmNewTemplate frmTemplate = new FrmNewTemplate();
-            frmTemplate.FormClosed += FrmTemplate_FormClosed;      
+            frmTemplate.FormClosed += FrmTemplate_FormClosed;
             frmTemplate.Show();
         }
 
@@ -1014,10 +1007,12 @@ namespace LBFVideoLib.Admin
             _templateList.Clear();
             cmbTemplate.DataSource = null;
 
-            if (Directory.Exists(_sourceTemplateFolderPath)){
+            if (Directory.Exists(_sourceTemplateFolderPath))
+            {
                 string[] templateNameList = Directory.GetDirectories(_sourceTemplateFolderPath);
 
-                if (templateNameList.Length > 0)                {
+                if (templateNameList.Length > 0)
+                {
 
                     for (int i = 0; i < templateNameList.Length; i++)
                     {
