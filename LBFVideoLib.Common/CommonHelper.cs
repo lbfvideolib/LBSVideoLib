@@ -38,5 +38,10 @@ namespace LBFVideoLib.Common
         {
             return "Version 2.0";
         }
+
+        public static int GetTotalClasses()
+        {
+            return 15;
+        }
     }
 }

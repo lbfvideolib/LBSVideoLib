@@ -1,5 +1,5 @@
-D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 2_english.jpg
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 1_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 2_english.jpg
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 3_english.jpg
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 4_english.jpg
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 5_english.jpg
@@ -13,6 +13,7 @@ D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\subjects_evs.png
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\subjects_hindi.png
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\subjects_maths.png
+D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Read Me.pdf
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\LBFHiTechTeacher.Client.exe.config
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\LBFHiTechTeacher.Client.exe
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\LBFHiTechTeacher.Client.pdb

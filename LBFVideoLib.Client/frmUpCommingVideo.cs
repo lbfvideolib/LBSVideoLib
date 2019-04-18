@@ -246,7 +246,7 @@ namespace LBFVideoLib.Client
             // get root
             string[] rootDirectoryList = Directory.GetDirectories(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity));
 
-            string[] sortedRootDirectoryList = new string[rootDirectoryList.Length];
+            string[] sortedRootDirectoryList = new string[CommonHelper.GetTotalClasses()];
             List<string> nonSortedDirectoryList = new List<string>();
             for (int i = 0; i < rootDirectoryList.Length; i++)
             {

@@ -156,6 +156,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Read Me.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Icon_-10x.png" />
     <Content Include="LBF.ico" />
     <Content Include="Unsed\Thumbnails\class 1_english.jpg">
