@@ -61,6 +61,7 @@ namespace LBFVideoLib.Client
 
         private void InitializeForm()
         {
+            lblVersionNo.Text = CommonHelper.GetVersionNo();
             label11.Location = new System.Drawing.Point(panel4.Width / 2 - 150, 11);
             lblAppTitle.Location = new System.Drawing.Point(panel4.Width / 2 - 75, 15);
 
@@ -264,8 +265,9 @@ namespace LBFVideoLib.Client
             // Fill Tree
             // get root
             string[] rootDirectoryList = Directory.GetDirectories(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity));
+                        
+            string[] sortedRootDirectoryList = new string[rootDirectoryList.Length];
 
-            string[] sortedRootDirectoryList = new string[15];
             List<string> nonSortedDirectoryList = new List<string>();
 
             for (int i = 0; i < rootDirectoryList.Length; i++)
@@ -281,11 +283,12 @@ namespace LBFVideoLib.Client
                 {
                     sortedRootDirectoryList[sortOrder - 1] = rootDirectoryList[i];
                 }
+            }
 
-                if (nonSortedDirectoryList.Count > 0)
-                {
-                    sortedRootDirectoryList.Concat(nonSortedDirectoryList.ToArray());
-                }
+
+            if (nonSortedDirectoryList.Count > 0)
+            {
+                sortedRootDirectoryList.Concat(nonSortedDirectoryList.ToArray());
             }
 
             for (int i = 0; i < sortedRootDirectoryList.Length; i++)

@@ -29,6 +29,7 @@ namespace LBFVideoLib.Admin
 
         private void FrmDeleteTemplate_Load(object sender, EventArgs e)
         {
+            lblVersionNo.Text = CommonHelper.GetVersionNo();
             InitDeleteTemplateForm();
         }
 

@@ -36,6 +36,7 @@ namespace LBFVideoLib.Client
             lblSessionYears.Text = ClientHelper.GetSessionString(ClientInfoObject.SessionString);
             lblSchoolWelcome.Text = ClientHelper.GetWelcomeString(ClientInfoObject.SchoolName, ClientInfoObject.SchoolCity, ClientInfoObject.SchoolId);
             lblExpireDate.Text = ClientHelper.GetExpiryDateString(ClientInfoObject.SessionEndDate);
+            lblVersionNo.Text = CommonHelper.GetVersionNo();
 
             FillTreeView();
             treeView1.CollapseAll();
@@ -83,7 +84,7 @@ namespace LBFVideoLib.Client
             // Fill Tree
             string[] rootDirectoryList = Directory.GetDirectories(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity));
 
-            string[] sortedRootDirectoryList = new string[15];
+            string[] sortedRootDirectoryList = new string[rootDirectoryList.Length];
             List<string> nonSortedDirectoryList = new List<string>();
 
             for (int i = 0; i < rootDirectoryList.Length; i++)
@@ -98,12 +99,12 @@ namespace LBFVideoLib.Client
                 else
                 {
                     sortedRootDirectoryList[sortOrder - 1] = rootDirectoryList[i];
-                }
+                }              
+            }
 
-                if (nonSortedDirectoryList.Count > 0)
-                {
-                    sortedRootDirectoryList.Concat(nonSortedDirectoryList.ToArray());
-                }
+            if (nonSortedDirectoryList.Count > 0)
+            {
+                sortedRootDirectoryList.Concat(nonSortedDirectoryList.ToArray());
             }
 
             for (int i = 0; i < sortedRootDirectoryList.Length; i++)

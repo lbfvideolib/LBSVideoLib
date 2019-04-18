@@ -33,5 +33,10 @@ namespace LBFVideoLib.Common
                     return -1;
             }
         }
+
+        public static string GetVersionNo()
+        {
+            return "Version 2.0";
+        }
     }
 }

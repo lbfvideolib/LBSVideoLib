@@ -28,7 +28,7 @@ namespace LBFVideoLib.Admin
         }
 
         private void FrmDeleteTemplate_Load(object sender, EventArgs e)
-        {
+        {            
             InitDeleteTemplateForm();
         }
 
@@ -132,6 +132,7 @@ namespace LBFVideoLib.Admin
         {
             try
             {
+                lblVersionNo.Text = CommonHelper.GetVersionNo();
                 progressBar1.Visible = false;
                 _sourceTemplateFolderPath = ConfigHelper.GetTemplateFolderPath;
                 FillTemplateList();

@@ -38,6 +38,7 @@ namespace LBFVideoLib.Client
 
         private void frmVideoLibrary_Load(object sender, EventArgs e)
         {
+            lblVersionNo.Text = CommonHelper.GetVersionNo();
             label11.Location = new System.Drawing.Point(panel4.Width / 2 - 150, 11);
             label2.Location = new System.Drawing.Point(panel4.Width / 2 - 75, 15);
 

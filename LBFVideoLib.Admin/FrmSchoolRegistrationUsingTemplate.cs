@@ -50,6 +50,7 @@ namespace LBFVideoLib.Admin
         {
             try
             {
+                lblVersionNo.Text = CommonHelper.GetVersionNo();
                 // read configuration information
                 _sourceVideoFolderPath = ConfigHelper.SourceVideoFolderPath;
                 _clientDistributionRootPath = ConfigHelper.ClientDistributionTargetRootPath;

@@ -40,6 +40,7 @@ namespace LBFVideoLib.Client
         {
             label11.Location = new System.Drawing.Point(panel4.Width / 2 - 150, 11);
             label2.Location = new System.Drawing.Point(panel4.Width / 2 - 75, 15);
+            lblVersionNo.Text = CommonHelper.GetVersionNo();
 
             _clientInfoFilePath = ClientHelper.GetClientInfoFilePath();
             //this.ClientInfoObject.LastAccessEndTime = DateTime.UtcNow;

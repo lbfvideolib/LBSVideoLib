@@ -62,7 +62,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblVersionNo = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -467,7 +467,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.lblVersionNo);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 698);
@@ -475,18 +475,18 @@
             this.panel4.Size = new System.Drawing.Size(1362, 43);
             this.panel4.TabIndex = 25;
             // 
-            // label3
+            // lblVersionNo
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(38, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 16);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Version 1.0";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblVersionNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(50)))), ((int)(((byte)(55)))));
+            this.lblVersionNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblVersionNo.ForeColor = System.Drawing.Color.White;
+            this.lblVersionNo.Location = new System.Drawing.Point(38, 11);
+            this.lblVersionNo.Name = "lblVersionNo";
+            this.lblVersionNo.Size = new System.Drawing.Size(129, 16);
+            this.lblVersionNo.TabIndex = 22;
+            this.lblVersionNo.Text = "Version 1.0";
+            this.lblVersionNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblVersionNo.Click += new System.EventHandler(this.label3_Click);
             // 
             // label11
             // 
@@ -590,7 +590,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.TextBox txtNoOfPcs;
         private System.Windows.Forms.Label lblNoOfPc;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblVersionNo;
         private System.Windows.Forms.CheckBox chkSelectAllBooks;
     }
 }
