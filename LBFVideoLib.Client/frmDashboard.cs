@@ -83,13 +83,27 @@ namespace LBFVideoLib.Client
             // Fill Tree
             string[] rootDirectoryList = Directory.GetDirectories(ClientHelper.GetClientVideoFilePath(ClientInfoObject.SchoolId, ClientInfoObject.SchoolCity));
 
-            string[] sortedRootDirectoryList = new string[8];
+            string[] sortedRootDirectoryList = new string[15];
+            List<string> nonSortedDirectoryList = new List<string>();
 
             for (int i = 0; i < rootDirectoryList.Length; i++)
             {
                 string classDirectoryName = Path.GetFileName(rootDirectoryList[i]);
-                int sortOrder = CommonHelper.GetClassSortOrder(classDirectoryName);
-                sortedRootDirectoryList[sortOrder - 1] = rootDirectoryList[i];
+                int sortOrder = CommonHelper.GetClassSortOrder(classDirectoryName);                
+
+                if (sortOrder == -1)
+                {
+                    nonSortedDirectoryList.Add(rootDirectoryList[i]);
+                }
+                else
+                {
+                    sortedRootDirectoryList[sortOrder - 1] = rootDirectoryList[i];
+                }
+
+                if (nonSortedDirectoryList.Count > 0)
+                {
+                    sortedRootDirectoryList.Concat(nonSortedDirectoryList.ToArray());
+                }
             }
 
             for (int i = 0; i < sortedRootDirectoryList.Length; i++)

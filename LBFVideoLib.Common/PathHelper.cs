@@ -10,8 +10,8 @@ namespace LBFVideoLib.Common
         public static string GetClientRootPath()
         {
            return Directory.GetCurrentDirectory();
-            //return @"C:\LBFARBooksSetup\ClientPackages\dd";           
-           // return @"C:\LBFHiTechTeacherSetup\ClientPackages\t3";
+          //  return @"C:\LBFARBooksSetup\ClientPackages\bb";           
+            //return @"C:\LBFHiTechTeacherSetup\ClientPackages\kkk";
         }
 
         public static string GetClientInfoFilePath()

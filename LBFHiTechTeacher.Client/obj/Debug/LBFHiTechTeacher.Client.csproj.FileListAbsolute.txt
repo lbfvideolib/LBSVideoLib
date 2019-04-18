@@ -1,5 +1,5 @@
-D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 1_english.jpg
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 2_english.jpg
+D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 1_english.jpg
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 3_english.jpg
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 4_english.jpg
 D:\Development\School\Source\LBSVideoLib\LBFHiTechTeacher.Client\bin\Debug\Unsed\Thumbnails\class 5_english.jpg

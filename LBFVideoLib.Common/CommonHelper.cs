@@ -9,28 +9,28 @@ namespace LBFVideoLib.Common
     {
         public static int GetClassSortOrder(string className)
         {
-            switch (className)
+            switch (className.ToLower())
             {
-                case "Class PG":
+                case "class pg":
                     return 1;
-                case "Class Nur":
+                case "class nur":
                     return 2;
-                case "Class KG1":
+                case "class kg1":
                     return 3;
-                case "Class KG2":
+                case "class kg2":
                     return 4;
-                case "Class 1":
+                case "class 1":
                     return 5;
-                case "Class 2":
+                case "class 2":
                     return 6;
-                case "Class 3":
+                case "class 3":
                     return 7;
-                case "Class 4":
+                case "class 4":
                     return 8;
-                case "Class 5":
+                case "class 5":
                     return 9;
                 default:
-                    return 0;
+                    return -1;
             }
         }
     }
