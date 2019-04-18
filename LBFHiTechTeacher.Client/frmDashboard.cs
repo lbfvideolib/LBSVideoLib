@@ -94,7 +94,7 @@ namespace LBFVideoLib.Client
 
             if (nonSortedDirectoryList.Count > 0)
             {
-                sortedRootDirectoryList.Concat(nonSortedDirectoryList.ToArray());
+                sortedRootDirectoryList = sortedRootDirectoryList.Concat(nonSortedDirectoryList.ToArray()).Where(i => i != null).ToArray();
             }
 
             for (int i = 0; i < sortedRootDirectoryList.Length; i++)
