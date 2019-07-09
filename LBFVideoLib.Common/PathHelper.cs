@@ -7,6 +7,7 @@ namespace LBFVideoLib.Common
     {
 
         #region Client Path Helper Methods
+
         public static string GetClientRootPath()
         {
            return Directory.GetCurrentDirectory();
