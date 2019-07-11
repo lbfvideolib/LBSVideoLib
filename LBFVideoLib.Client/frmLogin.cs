@@ -74,7 +74,7 @@ namespace LBFVideoLib.Client
                 if (_clientInfo != null)
                 {
                     #region BkupFileCode
-                    if (Directory.Exists(ClientHelper.GetClientInfoBackupRootPath()))
+                    if (Directory.Exists(ClientHelper.GetClientInfoBackupRootPath()) == false)
                     {
                         Directory.CreateDirectory(ClientHelper.GetClientInfoBackupRootPath());
                     }
