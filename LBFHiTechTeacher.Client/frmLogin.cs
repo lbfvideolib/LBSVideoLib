@@ -29,7 +29,7 @@ namespace LBFVideoLib.Client
             {
                 lblVersionNo.Text = CommonHelper.GetVersionNo();
                 label11.Location = new System.Drawing.Point(panel4.Width / 2 - 150, 11);
-                label2.Location = new System.Drawing.Point(panel4.Width / 2 - 75, 15);                
+                label2.Location = new System.Drawing.Point(panel4.Width / 2 - 75, 15);
 
                 this.progressBar1.Visible = true;
                 this.progressBar1.Enabled = true;
@@ -47,13 +47,39 @@ namespace LBFVideoLib.Client
 
                 this.progressBar1.Value = 30;
 
-                CommonAppStateDataHelper.ClientInfoObject = Cryptograph.DecryptObject<ClientInfo>(_clientInfoFilePath);
+                #region BkupFileCode
+                try
+                {
+                    CommonAppStateDataHelper.ClientInfoObject = Cryptograph.DecryptObject<ClientInfo>(_clientInfoFilePath);
+                }
+                catch (System.Runtime.Serialization.SerializationException serializationEx)
+                {
+                    if (Directory.Exists(ClientHelper.GetClientInfoBackupRootPath()))
+                    {
+                        // Create backup file
+                        File.Copy(ClientHelper.GetClientInfoBackupFilePath(), ClientHelper.GetClientInfoFilePath(), true);
+                        TextFileLogger.Log("Client info file is empty. Replaced with old file.");
+                    }
+
+                    throw;
+                } 
+                #endregion
                 _clientInfo = CommonAppStateDataHelper.ClientInfoObject;
 
                 this.progressBar1.Value = 70;
 
                 if (_clientInfo != null)
                 {
+                    #region BkupFileCode
+                    if (Directory.Exists(ClientHelper.GetClientInfoBackupRootPath()))
+                    {
+                        Directory.CreateDirectory(ClientHelper.GetClientInfoBackupRootPath());
+                    }
+
+                    // Create backup file
+                    File.Copy(ClientHelper.GetClientInfoFilePath(), ClientHelper.GetClientInfoBackupFilePath(), true);
+
+                    #endregion
                     lblSessionYears.Text = ClientHelper.GetSessionString(_clientInfo.SessionString);
                     lblSchoolWelcome.Text = ClientHelper.GetWelcomeString(_clientInfo.SchoolName, _clientInfo.SchoolCity, _clientInfo.SchoolId);
                     lblExpireDate.Text = ClientHelper.GetExpiryDateString(_clientInfo.SessionEndDate);
@@ -109,7 +135,7 @@ namespace LBFVideoLib.Client
                 MessageBox.Show(ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         private RegInfoFB GetFirebaseRegistrationInformation()
         {
             return GetRegInfoFromFirebase(_clientInfo.SchoolId, _clientInfo.SessionString);

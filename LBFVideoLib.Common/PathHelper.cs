@@ -9,9 +9,9 @@ namespace LBFVideoLib.Common
         #region Client Path Helper Methods
         public static string GetClientRootPath()
         {
-           return Directory.GetCurrentDirectory();
-          //  return @"C:\LBFARBooksSetup\ClientPackages\bb";           
-          // return @"C:\LBFHiTechTeacherSetup\ClientPackages\66";
+            return Directory.GetCurrentDirectory();
+            // return @"D:\School\Error";
+           // return @"D:\School\ClientPackages\a";
         }
 
         public static string GetClientInfoFilePath()
@@ -36,23 +36,41 @@ namespace LBFVideoLib.Common
         {
             return Directory.GetParent(fullBookDirectoryPath).Parent.Parent.Name;
         }
+        #region BkupFileCode
+
+        public static string GetClientInfoBackupRootPath()
+        {
+            return Path.Combine(GetClientRootPath(), "Bkup");
+        }
+
+        public static string GetClientInfoBackupFilePath()
+        {
+            return Path.Combine(GetClientInfoBackupRootPath(), ConfigHelper.ClientInfoFileName);
+        }
+
+        public static void CopyClientInfoFile(string sourcePath, string destinationPath, bool overwrite)
+        {
+            File.Copy(sourcePath, destinationPath, overwrite);
+        } 
+
+        #endregion
         #endregion
 
         #region Admin Path Helper Methods
 
         public static string GetTemplateTargetFolderPath(string templateTargetRootFolderPath, string templateName)
         {
-          return  Path.Combine(templateTargetRootFolderPath, templateName.Trim());
+            return  Path.Combine(templateTargetRootFolderPath, templateName.Trim());
         }
 
-        public static string GetTemplateTargetVideoFolderPath (string templateTargetFolderPath,string templateName)
+        public static string GetTemplateTargetVideoFolderPath(string templateTargetFolderPath, string templateName)
         {
             return Path.Combine(templateTargetFolderPath, GetTemplateVideoFolderName(templateName));
         }
 
-        public static string GetTemplateVideoFolderName ( string templateName)
+        public static string GetTemplateVideoFolderName(string templateName)
         {
-            return   string.Format("{0}_LBFVideos", templateName);
+            return string.Format("{0}_LBFVideos", templateName);
         }
 
         public static string GetRegisteredSchoolPackageTargetRootPath()
