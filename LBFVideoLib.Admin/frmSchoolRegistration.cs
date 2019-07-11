@@ -328,6 +328,7 @@ namespace LBFVideoLib.Admin
                 clientInfo.SelectedVideoDetails = selectedClassList.Classes;
                 clientInfo.VideoInfoList = videoInfoList;
                 clientInfo.MemoNumber = newMemoNumber;
+                clientInfo.MaxNumberOfPCs = Convert.ToInt32(txtNoOfPcs.Text);
 
                 // Generate client info json file and encrypt it.
                 string clientInfoFilePath = Path.Combine(clientSchoolCodePath, _clientInfoFileName);

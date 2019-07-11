@@ -103,6 +103,7 @@ D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\bin\Debug\Unsed\Thum
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\bin\Debug\Unsed\Thumbnails\subjects_evs.png
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\bin\Debug\Unsed\Thumbnails\subjects_hindi.png
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\bin\Debug\Unsed\Thumbnails\subjects_maths.png
+D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\bin\Debug\Read Me.pdf
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Client.exe.config
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Client.exe
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\bin\Debug\LBFVideoLib.Client.pdb
@@ -126,4 +127,3 @@ D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLi
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.csproj.GenerateResource.Cache
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.exe
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\obj\Debug\LBFVideoLib.Client.pdb
-D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Client\bin\Debug\Read Me.pdf

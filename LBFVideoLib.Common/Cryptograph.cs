@@ -17,7 +17,7 @@ namespace LBFVideoLib.Common
             try
             {
                 #region BkupFileCode
-                if (obj is null)
+                if (obj == null)
                 {
                     throw new NullReferenceException("Client info is null so can't encrypt it.");
                 } 

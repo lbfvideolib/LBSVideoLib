@@ -36,4 +36,3 @@ D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Common\bin\Debug\Newtonsoft
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Common\bin\Debug\Newtonsoft.Json.xml
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Common\obj\Debug\LBFVideoLib.Common.dll
 D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Common\obj\Debug\LBFVideoLib.Common.pdb
-D:\Development\School\Source\LBSVideoLib\LBFVideoLib.Common\obj\Debug\LBFVideoLib.Common.csprojResolveAssemblyReference.cache
