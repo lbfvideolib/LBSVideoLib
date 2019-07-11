@@ -55,10 +55,15 @@ namespace LBFVideoLib.Client
                     CommonAppStateDataHelper.ClientInfoObject.LastAccessEndTime = DateTime.Now;
                 }
 
-                FileInfo clientInfoFileInfo = new FileInfo(ClientHelper.GetClientInfoFilePath());
-                clientInfoFileInfo.Attributes &= ~FileAttributes.Hidden;
-                Cryptograph.EncryptObject(CommonAppStateDataHelper.ClientInfoObject, ClientHelper.GetClientInfoFilePath());
-                clientInfoFileInfo.Attributes |= FileAttributes.Hidden;
+                #region BkupFileCode-AddIfCondition
+                if (CommonAppStateDataHelper.ClientInfoObject != null)
+                {
+                    FileInfo clientInfoFileInfo = new FileInfo(ClientHelper.GetClientInfoFilePath());
+                    clientInfoFileInfo.Attributes &= ~FileAttributes.Hidden;
+                    Cryptograph.EncryptObject(CommonAppStateDataHelper.ClientInfoObject, ClientHelper.GetClientInfoFilePath());
+                    clientInfoFileInfo.Attributes |= FileAttributes.Hidden;
+                }
+                #endregion
             }
         }
 
