@@ -27,7 +27,6 @@ namespace LBFVideoLib.Client
         {
             try
             {
-
                 label11.Location = new System.Drawing.Point(panel4.Width / 2 - 150, 11);
                 label2.Location = new System.Drawing.Point(panel4.Width / 2 - 75, 15);
                 lblVersionNo.Text = CommonHelper.GetVersionNo();
@@ -48,19 +47,21 @@ namespace LBFVideoLib.Client
 
                 this.progressBar1.Value = 30;
 
-                CommonAppStateDataHelper.ClientInfoObject = Cryptograph.DecryptObject<ClientInfo>(_clientInfoFilePath);
                 #region BkupFileCode
                 try
                 {
                     CommonAppStateDataHelper.ClientInfoObject = Cryptograph.DecryptObject<ClientInfo>(_clientInfoFilePath);
                 }
-                catch (System.Runtime.Serialization.SerializationException serializationEx)
+                catch (Exception serializationEx)
                 {
-                    if (Directory.Exists(ClientHelper.GetClientInfoBackupRootPath()))
+                    if (serializationEx is System.Runtime.Serialization.SerializationException || serializationEx is System.Security.Cryptography.CryptographicException)
                     {
-                        // Create backup file
-                        File.Copy(ClientHelper.GetClientInfoBackupFilePath(), ClientHelper.GetClientInfoFilePath(), true);
-                        TextFileLogger.Log("Client info file is empty. Replaced with old file.");
+                        if (File.Exists(ClientHelper.GetClientInfoBackupFilePath()))
+                        {
+                            // Create backup file
+                            File.Copy(ClientHelper.GetClientInfoBackupFilePath(), ClientHelper.GetClientInfoFilePath(), true);
+                            TextFileLogger.Log("Client info file is empty. Replaced with old file.");
+                        }
                     }
 
                     throw;

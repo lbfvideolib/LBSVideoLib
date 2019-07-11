@@ -52,17 +52,19 @@ namespace LBFVideoLib.Client
                 {
                     CommonAppStateDataHelper.ClientInfoObject = Cryptograph.DecryptObject<ClientInfo>(_clientInfoFilePath);
                 }
-                catch (System.Runtime.Serialization.SerializationException serializationEx)
+                catch (Exception serializationEx)
                 {
-                    if (Directory.Exists(ClientHelper.GetClientInfoBackupRootPath()))
+                    if(serializationEx is System.Runtime.Serialization.SerializationException || serializationEx is System.Security.Cryptography.CryptographicException)
                     {
-                        // Create backup file
-                        File.Copy(ClientHelper.GetClientInfoBackupFilePath(), ClientHelper.GetClientInfoFilePath(), true);
-                        TextFileLogger.Log("Client info file is empty. Replaced with old file.");
+                        if (File.Exists(ClientHelper.GetClientInfoBackupFilePath()))
+                        {
+                            // Create backup file
+                            File.Copy(ClientHelper.GetClientInfoBackupFilePath(), ClientHelper.GetClientInfoFilePath(), true);
+                            TextFileLogger.Log("Client info file is empty. Replaced with old file.");
+                        }
                     }
-
                     throw;
-                } 
+                }
                 #endregion
                 _clientInfo = CommonAppStateDataHelper.ClientInfoObject;
 
@@ -71,7 +73,7 @@ namespace LBFVideoLib.Client
                 if (_clientInfo != null)
                 {
                     #region BkupFileCode
-                    if (Directory.Exists(ClientHelper.GetClientInfoBackupRootPath())==false)
+                    if (Directory.Exists(ClientHelper.GetClientInfoBackupRootPath()) == false)
                     {
                         Directory.CreateDirectory(ClientHelper.GetClientInfoBackupRootPath());
                     }
