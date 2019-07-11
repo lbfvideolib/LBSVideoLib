@@ -49,12 +49,41 @@ namespace LBFVideoLib.Client
                 this.progressBar1.Value = 30;
 
                 CommonAppStateDataHelper.ClientInfoObject = Cryptograph.DecryptObject<ClientInfo>(_clientInfoFilePath);
+                #region BkupFileCode
+                try
+                {
+                    CommonAppStateDataHelper.ClientInfoObject = Cryptograph.DecryptObject<ClientInfo>(_clientInfoFilePath);
+                }
+                catch (System.Runtime.Serialization.SerializationException serializationEx)
+                {
+                    if (Directory.Exists(ClientHelper.GetClientInfoBackupRootPath()))
+                    {
+                        // Create backup file
+                        File.Copy(ClientHelper.GetClientInfoBackupFilePath(), ClientHelper.GetClientInfoFilePath(), true);
+                        TextFileLogger.Log("Client info file is empty. Replaced with old file.");
+                    }
+
+                    throw;
+                }
+                #endregion
+
                 _clientInfo = CommonAppStateDataHelper.ClientInfoObject;
 
                 this.progressBar1.Value = 70;
 
                 if (_clientInfo != null)
                 {
+                    #region BkupFileCode
+                    if (Directory.Exists(ClientHelper.GetClientInfoBackupRootPath()))
+                    {
+                        Directory.CreateDirectory(ClientHelper.GetClientInfoBackupRootPath());
+                    }
+
+                    // Create backup file
+                    File.Copy(ClientHelper.GetClientInfoFilePath(), ClientHelper.GetClientInfoBackupFilePath(), true);
+
+                    #endregion
+
                     lblSessionYears.Text = ClientHelper.GetSessionString(_clientInfo.SessionString);
                     lblSchoolWelcome.Text = ClientHelper.GetWelcomeString(_clientInfo.SchoolName, _clientInfo.SchoolCity, _clientInfo.SchoolId);
                     lblExpireDate.Text = ClientHelper.GetExpiryDateString(_clientInfo.SessionEndDate);
