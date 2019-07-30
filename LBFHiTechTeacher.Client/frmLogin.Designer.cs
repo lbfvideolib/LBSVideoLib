@@ -311,7 +311,7 @@
             this.lblVersionNo.Size = new System.Drawing.Size(129, 16);
             this.lblVersionNo.TabIndex = 23;
             this.lblVersionNo.Text = "Version 1.0";
-            this.lblVersionNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblVersionNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblPrivacyPolicy
             // 

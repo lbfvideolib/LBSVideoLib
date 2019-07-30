@@ -36,7 +36,7 @@ namespace LBFVideoLib.Common
 
         public static string GetVersionNo()
         {
-            return "Version 12072019";
+            return "Version: 2.0";
         }
 
         public static int GetTotalClasses()
