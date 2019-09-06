@@ -11,23 +11,43 @@ namespace LBFVideoLib.Common
        public  static string GetMacAddress()
         {
             string macAddresses = "";
+
             foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
             {
                 // Only consider Ethernet network interfaces, thereby ignoring any
                 // loopback devices etc.
                 if (nic.NetworkInterfaceType != NetworkInterfaceType.Ethernet)
                 {
-                    //macAddresses = System.Environment.MachineName;
+                 //   macAddresses = System.Environment.MachineName;
                     continue;
                 }
                 //if (nic.OperationalStatus == OperationalStatus.Up)
                 //{
-                    macAddresses += nic.GetPhysicalAddress().ToString();
+                   macAddresses += nic.GetPhysicalAddress().ToString();
                     break;
                 //}
             }
-            return macAddresses;
 
+            // If Mac Address is blank
+            if (string.IsNullOrEmpty(macAddresses))
+            {
+                foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
+                {
+                    macAddresses = nic.GetPhysicalAddress().ToString();
+                    if (!string.IsNullOrEmpty(macAddresses))
+                    {
+                        break;
+                    }
+                }
+            }
+
+            // If Mac Address is blank
+            if (string.IsNullOrEmpty(macAddresses))
+            {
+                macAddresses = System.Environment.MachineName;
+            }
+
+            return macAddresses;
             //string mac = "";
             //foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces())
             //{
